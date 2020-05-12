@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolrDotnetSample.Application", "SolrDotnetSample.Application\SolrDotnetSample.Application.csproj", "{27E69081-449D-4D04-A725-0AD83E9376BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolrDotnetSample.Domain", "SolrDotnetSample.Domain\SolrDotnetSample.Domain.csproj", "{538B73C9-6E33-459F-B9CB-723A995DEFFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolrDotnetSample.Services", "SolrDotnetSample.Services\SolrDotnetSample.Services.csproj", "{12B687FC-A28D-4785-AA12-ED81F5EB801F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolrDotnetSample.Repositories", "SolrDotnetSample.Repositories\SolrDotnetSample.Repositories.csproj", "{2889E8FF-6F51-4209-98D5-27EE4A600B01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27E69081-449D-4D04-A725-0AD83E9376BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E69081-449D-4D04-A725-0AD83E9376BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E69081-449D-4D04-A725-0AD83E9376BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E69081-449D-4D04-A725-0AD83E9376BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{538B73C9-6E33-459F-B9CB-723A995DEFFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{538B73C9-6E33-459F-B9CB-723A995DEFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{538B73C9-6E33-459F-B9CB-723A995DEFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{538B73C9-6E33-459F-B9CB-723A995DEFFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12B687FC-A28D-4785-AA12-ED81F5EB801F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12B687FC-A28D-4785-AA12-ED81F5EB801F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12B687FC-A28D-4785-AA12-ED81F5EB801F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12B687FC-A28D-4785-AA12-ED81F5EB801F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2889E8FF-6F51-4209-98D5-27EE4A600B01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2889E8FF-6F51-4209-98D5-27EE4A600B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2889E8FF-6F51-4209-98D5-27EE4A600B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2889E8FF-6F51-4209-98D5-27EE4A600B01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
