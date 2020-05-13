@@ -67,6 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1589245360838</updated>
       <workItem from="1589245369207" duration="753000" />
+      <workItem from="1589375712909" duration="1007000" />
     </task>
     <task id="LOCAL-00001" summary="Adicionando Services">
       <created>1589245396723</created>
@@ -103,13 +104,20 @@
       <option name="project" value="LOCAL" />
       <updated>1589245463182</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="gitignore">
+      <created>1589376673390</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1589376673390</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -121,6 +129,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -129,6 +138,7 @@
     <MESSAGE value="Adicionando Domain" />
     <MESSAGE value="Adicionando Application" />
     <MESSAGE value="Adicionando demais dependencias" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionando demais dependencias" />
+    <MESSAGE value="gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
   </component>
 </project>
