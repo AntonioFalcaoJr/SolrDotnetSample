@@ -12,7 +12,7 @@ namespace poc_console_solr.Domain.Entities
         public DateTime PostedDate { get; set; }
         public double Price { get; set; }
         public string Title { get; set; }
-        
+
         protected override void SetId(Guid id) => Guid.NewGuid();
     }
 }
