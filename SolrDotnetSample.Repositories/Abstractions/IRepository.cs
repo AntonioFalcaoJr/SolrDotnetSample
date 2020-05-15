@@ -1,4 +1,6 @@
-using System.Linq;
+using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using poc_console_solr.Domain.Abstractions;
@@ -18,10 +20,8 @@ namespace SolrDotnetSample.Repositories.Abstractions
         void Insert(TEntity entity);
         Task InsertAsync(TEntity entity, CancellationToken cancellationToken);
 
-        IQueryable<TEntity> SelectAll();
-
-        TEntity SelectById(TId id);
-        Task<TEntity> SelectByIdAsync(TId id, CancellationToken cancellationToken);
+        IEnumerable<TEntity> Select(Expression<Func<TEntity, bool>> predicate);
+        Task<IEnumerable<TEntity>> SelectAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken);
 
         void Update(TEntity entity);
         Task UpdateAsync(TEntity entity, CancellationToken cancelletionToken);
