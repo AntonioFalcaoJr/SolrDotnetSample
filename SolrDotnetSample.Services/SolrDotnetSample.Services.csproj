@@ -15,4 +15,4 @@
       <ProjectReference Include="..\SolrDotnetSample.Repositories\SolrDotnetSample.Repositories.csproj" />
     </ItemGroup>
 
-</Project>
+ </Project>
