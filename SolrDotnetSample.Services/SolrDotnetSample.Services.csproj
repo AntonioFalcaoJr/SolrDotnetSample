@@ -6,7 +6,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="9.0.0" />
       <PackageReference Include="SolrNet.Core" Version="1.0.19" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SolrDotnetSample.Domain\SolrDotnetSample.Domain.csproj" />
+      <ProjectReference Include="..\SolrDotnetSample.Repositories\SolrDotnetSample.Repositories.csproj" />
     </ItemGroup>
 
 </Project>
