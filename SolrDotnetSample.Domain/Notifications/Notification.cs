@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace poc_console_solr.Domain.Notifications
+namespace SolrDotnetSample.Domain.Notifications
 {
     public class Notification : INotification
     {

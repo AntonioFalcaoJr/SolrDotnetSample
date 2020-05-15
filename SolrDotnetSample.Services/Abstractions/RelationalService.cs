@@ -4,11 +4,11 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using poc_console_solr.Domain.Abstractions;
-using poc_console_solr.Services.Models;
+using SolrDotnetSample.Domain.Abstractions;
 using SolrDotnetSample.Repositories.Abstractions.Relational;
+using SolrDotnetSample.Services.Models;
 
-namespace poc_console_solr.Services.Abstractions
+namespace SolrDotnetSample.Services.Abstractions
 {
     public abstract class RelationalService<TEntity, TModel, TId> : IService<TEntity, TModel, TId>
         where TEntity : Entity<TId>

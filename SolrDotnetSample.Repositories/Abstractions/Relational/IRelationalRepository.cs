@@ -1,4 +1,4 @@
-using poc_console_solr.Domain.Abstractions;
+using SolrDotnetSample.Domain.Abstractions;
 
 namespace SolrDotnetSample.Repositories.Abstractions.Relational
 {

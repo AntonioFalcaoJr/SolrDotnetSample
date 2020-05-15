@@ -1,7 +1,7 @@
 using System.Linq;
-using poc_console_solr.Domain.Notifications;
+using SolrDotnetSample.Domain.Notifications;
 
-namespace poc_console_solr.Domain.Abstractions
+namespace SolrDotnetSample.Domain.Abstractions
 {
     public abstract class Entity<TId>
         where TId : struct

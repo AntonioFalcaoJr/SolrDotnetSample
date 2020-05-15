@@ -1,8 +1,8 @@
 using System;
-using poc_console_solr.Domain.Entities;
+using SolrDotnetSample.Domain.Entities;
 using SolrNet.Attributes;
 
-namespace poc_console_solr.Domain.Models
+namespace SolrDotnetSample.Domain.Models
 {
     public class SolrPostModel
     {

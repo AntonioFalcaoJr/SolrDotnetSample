@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace poc_console_solr
+namespace SolrDotnetSample.Application
 {
     internal class Program
     {

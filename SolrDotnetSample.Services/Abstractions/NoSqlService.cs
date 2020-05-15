@@ -1,4 +1,4 @@
-namespace poc_console_solr.Services.Abstractions
+namespace SolrDotnetSample.Services.Abstractions
 {
     public class NoSqlService { }
 }

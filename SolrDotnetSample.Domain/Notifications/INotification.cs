@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace poc_console_solr.Domain.Notifications
+namespace SolrDotnetSample.Domain.Notifications
 {
     public interface INotification
     {

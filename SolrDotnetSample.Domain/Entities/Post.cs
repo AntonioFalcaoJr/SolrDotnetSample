@@ -1,7 +1,7 @@
 ﻿using System;
-using poc_console_solr.Domain.Abstractions;
+using SolrDotnetSample.Domain.Abstractions;
 
-namespace poc_console_solr.Domain.Entities
+namespace SolrDotnetSample.Domain.Entities
 {
     public class Post : Entity<Guid>
     {

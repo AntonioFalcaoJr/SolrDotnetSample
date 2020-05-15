@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
-using poc_console_solr.Domain.Abstractions;
-using poc_console_solr.Services.Models;
+using SolrDotnetSample.Domain.Abstractions;
+using SolrDotnetSample.Services.Models;
 
-namespace poc_console_solr.Services.Abstractions
+namespace SolrDotnetSample.Services.Abstractions
 {
     public interface IService<TEntity, in TModel, in TId>
         where TEntity : Entity<TId>

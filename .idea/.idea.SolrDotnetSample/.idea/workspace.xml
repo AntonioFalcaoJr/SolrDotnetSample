@@ -11,23 +11,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="300f01c0-2630-446d-842a-0acd251c8eca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/INotification.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/Notification.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/INoSqlRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/NoSqlRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/IRelationalRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/RelationalRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/NoSqlService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/RelationalService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/Models/Model.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SolrDotnetSample/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolrDotnetSample/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Application/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Application/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Application/SolrDotnetSample.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Application/SolrDotnetSample.Application.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Domain/Abstractions/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/Abstractions/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Domain/Entities/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/Entities/Post.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Domain/Models/SolrPostModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/Models/SolrPostModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/INotification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/INotification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/Notification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/Notification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Domain/SolrDotnetSample.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/SolrDotnetSample.Domain.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/IRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/SolrDotnetSample.Repositories.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/SolrDotnetSample.Repositories.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/INoSqlRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/INoSqlRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/NoSqlRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/NoSqlRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/IRelationalRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/IRelationalRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/RelationalRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/RelationalRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/IService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/IService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/SolrServices/ISolrIndexService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/SolrServices/SolrIndexService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Services/SolrDotnetSample.Services.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/SolrDotnetSample.Services.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/RelationalService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/RelationalService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,13 +74,13 @@
         <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/IRelationalRepository.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/INoSqlRepository.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/INotification.cs" />
-        <option value="$PROJECT_DIR$/SolrDotnetSample.Domain/Abstractions/Entity.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/Notification.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/IService.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/IRepository.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/NoSqlRepository.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/RelationalService.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/RelationalRepository.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Domain/Abstractions/Entity.cs" />
       </list>
     </option>
   </component>
@@ -137,7 +135,7 @@
       <workItem from="1589375712909" duration="2005000" />
       <workItem from="1589379251762" duration="599000" />
       <workItem from="1589385076051" duration="6320000" />
-      <workItem from="1589500048620" duration="7894000" />
+      <workItem from="1589500048620" duration="8223000" />
     </task>
     <task id="LOCAL-00001" summary="Adicionando Services">
       <created>1589245396723</created>
@@ -188,7 +186,42 @@
       <option name="project" value="LOCAL" />
       <updated>1589377374800</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Adicionando Notifications">
+      <created>1589508314939</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1589508314939</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Evoluindo entity">
+      <created>1589508334029</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1589508334029</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Estruturando a camada de repositories">
+      <created>1589508372423</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1589508372423</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Estruturando a camada de serices">
+      <created>1589508391955</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1589508391955</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Ajustes adicionais">
+      <created>1589508407350</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1589508407350</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +250,12 @@
     <MESSAGE value="Adicionando demais dependencias" />
     <MESSAGE value="gitignore" />
     <MESSAGE value="Workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="Workspace" />
+    <MESSAGE value="Adicionando Notifications" />
+    <MESSAGE value="Evoluindo entity" />
+    <MESSAGE value="Estruturando a camada de repositories" />
+    <MESSAGE value="Estruturando a camada de serices" />
+    <MESSAGE value="Ajustes adicionais" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajustes adicionais" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2297" y="385" width="515" height="280" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1589508248412">
