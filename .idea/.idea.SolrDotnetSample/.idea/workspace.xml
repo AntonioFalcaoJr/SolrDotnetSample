@@ -11,21 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="300f01c0-2630-446d-842a-0acd251c8eca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Application/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Application/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Application/SolrDotnetSample.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Application/SolrDotnetSample.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Domain/Abstractions/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/Abstractions/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Domain/Entities/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/Entities/Post.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Domain/Models/SolrPostModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/Models/SolrPostModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/INotification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/INotification.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/Notification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/Notification.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Domain/SolrDotnetSample.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Domain/SolrDotnetSample.Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/IRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/INoSqlRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/INoSqlRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/NoSqlRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/NoSqlRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/IRelationalRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/IRelationalRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/RelationalRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/RelationalRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/IService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/IService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/RelationalService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/RelationalService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/NoSql/INoSqlService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SolrDotnetSample/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolrDotnetSample/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/NoSqlService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/NoSql/NoSqlService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +27,10 @@
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/IRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/NoSqlRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/RelationalRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/Relational/IRelationalService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A97EC963-0B3D-4281-963A-332C16B3496E/24/LambdaExpression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F166470-EA2E-420E-BE80-C320F65FF2F2/73/73f1690c/ISolrReadOnlyOperations`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/NoSql/INoSqlService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F166470-EA2E-420E-BE80-C320F65FF2F2/21/d6bd3723/SolrQueryResults`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F166470-EA2E-420E-BE80-C320F65FF2F2/a4/c6b357df/StatsResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F166470-EA2E-420E-BE80-C320F65FF2F2/3a/ce91a3ca/ISolrOperations`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -49,9 +39,9 @@
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Domain/Abstractions/Entity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A3DBE483-6645-4FDB-B51D-FEEB0B5C4997/21/EntityFrameworkQueryableExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F166470-EA2E-420E-BE80-C320F65FF2F2/b8/4dddf864/SolrQuery.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/RelationalService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/Relational/RelationalService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/Models/Model.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/NoSqlService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/NoSql/NoSqlService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/IRelationalRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/IService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A3DBE483-6645-4FDB-B51D-FEEB0B5C4997/12/DbSet.cs" root0="SKIP_HIGHLIGHTING" />
@@ -73,14 +63,21 @@
         <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/NoSqlService.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/IRelationalRepository.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/INoSqlRepository.cs" />
-        <option value="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/INotification.cs" />
-        <option value="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/Notification.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/IService.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/IRepository.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/NoSqlRepository.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/RelationalService.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/RelationalRepository.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Domain/Entities/Post.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Domain/Models/SolrPostModel.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/INotification.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/Notification.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Domain/Abstractions/Entity.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/Relational/IRelationalService.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/Relational/RelationalService.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Services/SolrDotnetSample.Services.csproj" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/NoSql/INoSqlService.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/NoSql/NoSqlService.cs" />
       </list>
     </option>
   </component>
@@ -99,6 +96,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/NoSql" />
     <property name="settings.editor.selected.configurable" value="aws" />
   </component>
   <component name="RunManager">
@@ -135,7 +133,7 @@
       <workItem from="1589375712909" duration="2005000" />
       <workItem from="1589379251762" duration="599000" />
       <workItem from="1589385076051" duration="6320000" />
-      <workItem from="1589500048620" duration="8223000" />
+      <workItem from="1589500048620" duration="9487000" />
     </task>
     <task id="LOCAL-00001" summary="Adicionando Services">
       <created>1589245396723</created>
@@ -221,7 +219,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589508407350</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Adjuste Namespace">
+      <created>1589508727709</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1589508727709</updated>
+    </task>
+    <task id="LOCAL-00014" summary="RelationalService">
+      <created>1589508937872</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1589508937872</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,16 +267,22 @@
     <MESSAGE value="Estruturando a camada de repositories" />
     <MESSAGE value="Estruturando a camada de serices" />
     <MESSAGE value="Ajustes adicionais" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajustes adicionais" />
+    <MESSAGE value="Adjuste Namespace" />
+    <MESSAGE value="RelationalService" />
+    <option name="LAST_COMMIT_MESSAGE" value="RelationalService" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2297" y="385" width="515" height="280" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1589508248412">
+    <state x="2297" y="385" width="515" height="280" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1589508691859">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state x="2297" y="385" width="515" height="280" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/3520.145.1024.768/1600.0.1920.1080/0.306.1600.900@1600.0.1920.1080" timestamp="1589508248412" />
-    <state x="2118" y="179" width="873" height="692" key="RiderGenerateDialog" timestamp="1589507209066">
+    <state x="2297" y="385" width="515" height="280" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/3520.145.1024.768/1600.0.1920.1080/0.306.1600.900@1600.0.1920.1080" timestamp="1589508691859" />
+    <state x="2343" y="279" width="424" height="491" key="FileChooserDialogImpl" timestamp="1589508974580">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state x="2118" y="179" width="873" height="692" key="RiderGenerateDialog/3520.145.1024.768/1600.0.1920.1080/0.306.1600.900@1600.0.1920.1080" timestamp="1589507209066" />
+    <state x="2343" y="279" width="424" height="491" key="FileChooserDialogImpl/3520.145.1024.768/1600.0.1920.1080/0.306.1600.900@1600.0.1920.1080" timestamp="1589508974580" />
+    <state x="2118" y="179" width="873" height="692" key="RiderGenerateDialog" timestamp="1589509071905">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2118" y="179" width="873" height="692" key="RiderGenerateDialog/3520.145.1024.768/1600.0.1920.1080/0.306.1600.900@1600.0.1920.1080" timestamp="1589509071905" />
   </component>
 </project>
