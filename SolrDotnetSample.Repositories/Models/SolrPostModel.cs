@@ -1,10 +1,11 @@
 using System;
 using SolrDotnetSample.Domain.Entities;
+using SolrDotnetSample.Repositories.Abstractions;
 using SolrNet.Attributes;
 
-namespace SolrDotnetSample.Domain.Models
+namespace SolrDotnetSample.Repositories.Models
 {
-    public class SolrPostModel
+    public class SolrPostModel : Model<Guid>
     {
         public SolrPostModel() { }
 
