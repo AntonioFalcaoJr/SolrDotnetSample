@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using SolrDotnetSample.Domain.Abstractions;
-using SolrDotnetSample.Services.Models;
+using SolrDotnetSample.Repositories.Abstractions;
 
 namespace SolrDotnetSample.Services.Abstractions
 {

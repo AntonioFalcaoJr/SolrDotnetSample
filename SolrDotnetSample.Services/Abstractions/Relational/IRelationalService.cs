@@ -1,5 +1,5 @@
 using SolrDotnetSample.Domain.Abstractions;
-using SolrDotnetSample.Services.Models;
+using SolrDotnetSample.Repositories.Abstractions;
 
 namespace SolrDotnetSample.Services.Abstractions.Relational
 {
