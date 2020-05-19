@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  solr:
+    image: solr
+    ports:
+      - "8983:8983"
+    volumes:
+      - solrdata:/opt/solr/server/solr/true_posts
+    entrypoint:
+      - solr-precreate
+      - my_core
+    networks:
+      - solr
+
+volumes:
+  solrdata:
+    driver: local
+
+networks:
+  solr:
+    driver: bridge
