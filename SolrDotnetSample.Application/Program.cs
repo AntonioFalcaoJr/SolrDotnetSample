@@ -1,38 +1,49 @@
-﻿using System;
-
+﻿using System.IO;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SolrDotnetSample.Repositories.IoC;
+using SolrDotnetSample.Services.IoC;
 
 namespace SolrDotnetSample.Application
 {
     internal class Program
     {
-        private static IServiceCollection _serviceCollection;
-        private static IServiceProvider _serviceProvider;
-        private static Startup _startup;
-        
-        public Program()
-        {
-            _serviceCollection = new ServiceCollection();
-            _startup = new Startup();
-        }
-
-        public static void Main(string[] args)
-        {
-            _startup.ConfigureServices(_serviceCollection);
-            _serviceProvider = _serviceCollection.BuildServiceProvider();
-
-            _serviceProvider
-               .GetService<ILoggerFactory>().CreateLogger<Program>();
-               //.AddConsole(LogLevel.Debug);
-
-            var logger = _serviceProvider.GetService<ILoggerFactory>()
-               .CreateLogger<Program>();
-
-            logger.LogDebug("Logger is working!");
-
-            var service = _serviceProvider.GetService<IApp>();
-            service.Run();
-        }
+        public static async Task Main(string[] args)
+            => await new HostBuilder()
+               .ConfigureHostConfiguration(configHost =>
+                {
+                    configHost.SetBasePath(Directory.GetCurrentDirectory())
+                       .AddJsonFile("appsettings.json", true, true)
+                       .AddEnvironmentVariables()
+                       .AddCommandLine(args);
+                })
+               .ConfigureAppConfiguration((hostContext, configApp) =>
+                {
+                    configApp.SetBasePath(Directory.GetCurrentDirectory())
+                       .AddJsonFile("appsettings.json", true, true)
+                       .AddJsonFile($"appsettings.{hostContext.HostingEnvironment.EnvironmentName}.json", true, true)
+                       .AddEnvironmentVariables()
+                       .AddCommandLine(args);
+                })
+               .ConfigureServices((hostContext, services) =>
+                {
+                    services.AddLogging()
+                       .AddRepository()
+                       .AddAutoMapper()
+                       .AddSolr()
+                       .AddServices()
+                       .AddHostedService<HostedService>();
+                })
+               .ConfigureLogging((hostContext, configLogging) =>
+                {
+                    configLogging.AddConsole();
+                })
+               .UseConsoleLifetime()
+               .Build()
+               .RunAsync();
     }
 }
