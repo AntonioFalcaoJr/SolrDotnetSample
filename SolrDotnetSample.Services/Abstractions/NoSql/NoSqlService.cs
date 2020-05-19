@@ -1,7 +1,7 @@
 using AutoMapper;
 using SolrDotnetSample.Domain.Abstractions;
+using SolrDotnetSample.Repositories.Abstractions;
 using SolrDotnetSample.Repositories.Abstractions.NoSql;
-using SolrDotnetSample.Services.Models;
 
 namespace SolrDotnetSample.Services.Abstractions.NoSql
 {
