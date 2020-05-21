@@ -4,7 +4,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using SolrNet;
 
 namespace SolrDotnetSample.Repositories.Abstractions.NoSql
@@ -23,54 +22,69 @@ namespace SolrDotnetSample.Repositories.Abstractions.NoSql
 
         public virtual void Delete(TId id)
         {
+            if (Equals(id, default)) return;
             _solrOperations.Delete(id.ToString());
             _solrOperations.Commit();
         }
 
         public virtual async Task DeleteAsync(TId id, CancellationToken cancellationToken)
         {
+            if (Equals(id, default)) return;
             await _solrOperations.DeleteAsync(id.ToString());
             await _solrOperations.CommitAsync();
         }
 
-        public virtual bool Exists(TId id) => throw new NotImplementedException();
+        public virtual bool Exists(TId id)
+            => Equals(id, default) ? default : SelectById(id) is {};
 
-        public virtual Task<bool> ExistsAsync(TId id, CancellationToken cancellationToken) => throw new NotImplementedException();
+        public virtual async Task<bool> ExistsAsync(TId id, CancellationToken cancellationToken)
+            => Equals(id, default) ? default : await SelectByIdAsync(id, cancellationToken) is {};
 
         public virtual void Insert(TModel model)
         {
+            if (model is null) return;
             _solrOperations.Add(model);
             _solrOperations.Commit();
         }
 
         public virtual async Task InsertAsync(TModel model, CancellationToken cancellationToken)
         {
+            if (model is null) return;
             await _solrOperations.AddAsync(model);
             await _solrOperations.CommitAsync();
         }
 
         public IEnumerable<TModel> SelectAll(Expression<Func<TModel, bool>> predicate)
-            => throw new NotImplementedException();
+            => _solrOperations.Query(SolrQuery.All);
 
-        public Task<IEnumerable<TModel>> SelectAllAsync(Expression<Func<TModel, bool>> predicate, CancellationToken cancellationToken)
-            => throw new NotImplementedException();
+        public async Task<IEnumerable<TModel>> SelectAllAsync(Expression<Func<TModel, bool>> predicate, CancellationToken cancellationToken)
+            => await _solrOperations.QueryAsync(SolrQuery.All, cancellationToken);
 
-        public virtual void Update(TModel model) => Insert(model);
+        public virtual void Update(TModel model)
+        {
+            if (model is null) return;
+            Insert(model);
+        }
 
         public virtual async Task UpdateAsync(TModel model, CancellationToken cancelletionToken)
-            => await InsertAsync(model, cancelletionToken);
+        {
+            if (model is null) return;
+            await InsertAsync(model, cancelletionToken);
+        }
 
         public virtual TModel SelectById(TId id)
         {
+            if (Equals(id, default)) return default;
             var queryByField = new SolrQueryByField(IdField, id.ToString());
             return _solrOperations.Query(queryByField).FirstOrDefault();
         }
 
         public virtual async Task<TModel> SelectByIdAsync(TId id, CancellationToken cancellationToken)
         {
-            var queryByField = new SolrQueryByField(IdField, "3bbee7fa-98bd-4d7b-ad87-223a68599079".ToString()) {Quoted = false};
-            var result = await _solrOperations.QueryAsync(queryByField, cancellationToken);
-            return result?.FirstOrDefault();
+            if (Equals(id, default)) return default;
+            var queryByField = new SolrQueryByField(IdField, id.ToString()) {Quoted = false};
+            var solrQueryResults = await _solrOperations.QueryAsync(queryByField, cancellationToken);
+            return solrQueryResults?.FirstOrDefault();
         }
     }
 }

@@ -25,7 +25,6 @@ namespace SolrDotnetSample.Application
             Console.WriteLine(postByDb?.Description ?? "Erro");
         }
 
-        public Task StopAsync(CancellationToken cancellationToken)
-            => Task.FromResult(cancellationToken);
+        public Task StopAsync(CancellationToken cancellationToken) => Task.FromResult(cancellationToken);
     }
 }

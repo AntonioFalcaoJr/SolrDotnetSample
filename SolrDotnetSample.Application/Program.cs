@@ -11,32 +11,41 @@ namespace SolrDotnetSample.Application
 {
     internal class Program
     {
+        private const string SettingsName = "appsettings";
+        private const string SettingsExtention = ".json";
+        private const string AppSettings = SettingsName + SettingsExtention;
+
         public static async Task Main(string[] args)
             => await new HostBuilder()
                .ConfigureHostConfiguration(configHost =>
                 {
-                    configHost.SetBasePath(Directory.GetCurrentDirectory())
-                       .AddJsonFile("appsettings.json", true, true)
+                    configHost
+                       .SetBasePath(Directory.GetCurrentDirectory())
+                       .AddJsonFile(AppSettings, true, true)
                        .AddEnvironmentVariables()
                        .AddCommandLine(args);
                 })
                .ConfigureAppConfiguration((hostContext, configApp) =>
                 {
-                    configApp.SetBasePath(Directory.GetCurrentDirectory())
-                       .AddJsonFile("appsettings.json", true, true)
-                       .AddJsonFile($"appsettings.{hostContext.HostingEnvironment.EnvironmentName}.json", true, true)
+                    configApp
+                       .SetBasePath(Directory.GetCurrentDirectory())
+                       .AddJsonFile(AppSettings, true, true)
+                       .AddJsonFile(SettingsName + "." + hostContext.HostingEnvironment.EnvironmentName + SettingsExtention, true, true)
                        .AddEnvironmentVariables()
                        .AddCommandLine(args);
                 })
                .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddLogging()
+                    services
+                       .AddLogging()
                        .AddRepository()
-
-                        //.AddRepositoryAutoMapper()
-                       .AddSolr()
+                       .AddAutoMapper()
+                       .AddSolr(options =>
+                        {
+                            options.BaseAddress = hostContext.Configuration["Solr:BaseAddress"];
+                            options.Core = hostContext.Configuration["Solr:Core"];;
+                        })
                        .AddServices()
-                       .AddServiceAutoMapper()
                        .AddHostedService<HostedService>();
                 })
                .ConfigureLogging((hostContext, configLogging) =>
