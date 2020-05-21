@@ -17,6 +17,15 @@ namespace SolrDotnetSample.WebApi
 
         private IConfiguration Configuration { get; }
 
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
+            app.UseHttpsRedirection();
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -29,15 +38,6 @@ namespace SolrDotnetSample.WebApi
                 options.BaseAddress = Configuration["Solr:BaseAddress"];
                 options.Core = Configuration["Solr:Core"];
             });
-        }
-
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
-            app.UseHttpsRedirection();
-            app.UseRouting();
-            app.UseAuthorization();
-            app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
 }

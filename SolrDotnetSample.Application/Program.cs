@@ -43,7 +43,8 @@ namespace SolrDotnetSample.Application
                        .AddSolr(options =>
                         {
                             options.BaseAddress = hostContext.Configuration["Solr:BaseAddress"];
-                            options.Core = hostContext.Configuration["Solr:Core"];;
+                            options.Core = hostContext.Configuration["Solr:Core"];
+                            ;
                         })
                        .AddServices()
                        .AddHostedService<HostedService>();

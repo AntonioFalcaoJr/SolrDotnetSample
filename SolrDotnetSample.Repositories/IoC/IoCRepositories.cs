@@ -10,11 +10,11 @@ namespace SolrDotnetSample.Repositories.IoC
     {
         private static readonly SolrOptions SolrOptions = new SolrOptions();
 
-        public static IServiceCollection AddRepositories(this IServiceCollection services)
-            => services.AddScoped<IPostRepository, PostRepository>();
-
         public static IServiceCollection AddAutoMapper(this IServiceCollection services)
             => services.AddAutoMapper(typeof(ModelToDomainProfile), typeof(DomainToModelProfile));
+
+        public static IServiceCollection AddRepositories(this IServiceCollection services)
+            => services.AddScoped<IPostRepository, PostRepository>();
 
         public static IServiceCollection AddSolr(this IServiceCollection services, Action<SolrOptions> options)
         {
