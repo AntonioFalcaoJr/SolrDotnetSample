@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -102,6 +103,24 @@ namespace SolrDotnetSample.Services.Abstractions
             var model = _mapper.Map<TModel>(entity);
             if (entity.Valid) await _repository.InsertAsync(model, cancellationToken);
             return entity;
+        }
+
+        public IEnumerable<TEntity> SaveMany(IEnumerable<TEntity> entities)
+        {
+            entities = entities as TEntity[] ?? entities.ToArray();
+            if (entities.Any() == false || entities.Any(x => x.Valid) == false) return entities;
+            var models = _mapper.Map<IEnumerable<TModel>>(entities);
+            _repository.InsertMany(models);
+            return entities;
+        }
+
+        public async Task<IEnumerable<TEntity>> SaveManyAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken)
+        {
+            entities = entities as TEntity[] ?? entities.ToArray();
+            if (entities.Any() == false || entities.Any(x => x.Valid) == false) return entities;
+            var models = _mapper.Map<IEnumerable<TModel>>(entities);
+            await _repository.InsertManyAsync(models, cancellationToken);
+            return entities;
         }
     }
 }

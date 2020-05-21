@@ -28,5 +28,8 @@ namespace SolrDotnetSample.Services.Abstractions
 
         TEntity Save(TEntity entity);
         Task<TEntity> SaveAsync(TEntity entity, CancellationToken cancellationToken);
+
+        IEnumerable<TEntity> SaveMany(IEnumerable<TEntity> entities);
+        Task<IEnumerable<TEntity>> SaveManyAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken);
     }
 }

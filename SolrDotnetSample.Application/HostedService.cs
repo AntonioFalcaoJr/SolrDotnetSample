@@ -18,11 +18,16 @@ namespace SolrDotnetSample.Application
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
-            var post = new Post(Guid.NewGuid(), "Description", "Title", 0.0, DateTime.Now, DateTime.Now, true, true);
-            await _postService.SaveAsync(post, cancellationToken);
+            Console.WriteLine("Define amount for generate:");
+            var line = Console.ReadLine();
+            var result = int.TryParse(line, out var amount) ? amount : default;
 
-            var postByDb = await _postService.GetByIdAsync(post.Id, cancellationToken);
-            Console.WriteLine(postByDb?.Description ?? "Erro");
+            for (var i = 0; i < result; i++)
+            {
+                var post = new Post(Guid.NewGuid(), "Description", "Title", 0.0, DateTime.Now, DateTime.Now, true, true);
+                await _postService.SaveAsync(post, cancellationToken);
+            }
+
         }
 
         public Task StopAsync(CancellationToken cancellationToken) => Task.FromResult(cancellationToken);

@@ -55,10 +55,10 @@ namespace SolrDotnetSample.Repositories.Abstractions.NoSql
         }
 
         public IEnumerable<TModel> SelectAll(Expression<Func<TModel, bool>> predicate)
-            => _solrOperations.Query(SolrQuery.All);
+            => predicate is null ? default : _solrOperations.Query(SolrQuery.All);
 
         public async Task<IEnumerable<TModel>> SelectAllAsync(Expression<Func<TModel, bool>> predicate, CancellationToken cancellationToken)
-            => await _solrOperations.QueryAsync(SolrQuery.All, cancellationToken);
+            => predicate is null ? default : await _solrOperations.QueryAsync(SolrQuery.All, cancellationToken);
 
         public virtual void Update(TModel model)
         {
@@ -85,6 +85,22 @@ namespace SolrDotnetSample.Repositories.Abstractions.NoSql
             var queryByField = new SolrQueryByField(IdField, id.ToString()) {Quoted = false};
             var solrQueryResults = await _solrOperations.QueryAsync(queryByField, cancellationToken);
             return solrQueryResults?.FirstOrDefault();
+        }
+
+        public virtual void InsertMany(IEnumerable<TModel> models)
+        {
+            models = models as TModel[] ?? models.ToArray();
+            if (models.Any() == false) return;
+            _solrOperations.AddRange(models);
+            _solrOperations.Commit();
+        }
+
+        public virtual async Task InsertManyAsync(IEnumerable<TModel> models, CancellationToken cancellationToken)
+        {
+            models = models as TModel[] ?? models.ToArray();
+            if (models.Any() == false) return;
+            await _solrOperations.AddRangeAsync(models);
+            await _solrOperations.CommitAsync();
         }
     }
 }

@@ -19,6 +19,9 @@ namespace SolrDotnetSample.Repositories.Abstractions
         void Insert(TModel model);
         Task InsertAsync(TModel model, CancellationToken cancellationToken);
 
+        void InsertMany(IEnumerable<TModel> models);
+        Task InsertManyAsync(IEnumerable<TModel> models, CancellationToken cancellationToken);
+
         IEnumerable<TModel> SelectAll(Expression<Func<TModel, bool>> predicate);
         Task<IEnumerable<TModel>> SelectAllAsync(Expression<Func<TModel, bool>> predicate, CancellationToken cancellationToken);
 
