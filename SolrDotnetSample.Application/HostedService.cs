@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
@@ -18,16 +19,20 @@ namespace SolrDotnetSample.Application
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
+            var posts = new List<Post>();
+            var amount = GetAmountRequested();
+            
+            for (var i = 0; i < amount; i++) 
+                posts.Add(new Post(Guid.NewGuid(), "Description", "Title", 0.0, DateTime.Now, DateTime.Now, true, true));
+
+            await _postService.SaveManyAsync(posts, cancellationToken);
+        }
+
+        private static int GetAmountRequested()
+        {
             Console.WriteLine("Define amount for generate:");
-            var line = Console.ReadLine();
-            var result = int.TryParse(line, out var amount) ? amount : default;
-
-            for (var i = 0; i < result; i++)
-            {
-                var post = new Post(Guid.NewGuid(), "Description", "Title", 0.0, DateTime.Now, DateTime.Now, true, true);
-                await _postService.SaveAsync(post, cancellationToken);
-            }
-
+            var input = Console.ReadLine();
+            return int.TryParse(input, out var amount) ? amount : default;
         }
 
         public Task StopAsync(CancellationToken cancellationToken) => Task.FromResult(cancellationToken);

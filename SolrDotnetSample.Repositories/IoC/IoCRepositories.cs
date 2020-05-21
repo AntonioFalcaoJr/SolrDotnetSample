@@ -1,5 +1,4 @@
 using System;
-using System.Linq.Expressions;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using SolrDotnetSample.Repositories.Mappers;
@@ -11,7 +10,7 @@ namespace SolrDotnetSample.Repositories.IoC
     {
         private static readonly SolrOptions SolrOptions = new SolrOptions();
 
-        public static IServiceCollection AddRepository(this IServiceCollection services)
+        public static IServiceCollection AddRepositories(this IServiceCollection services)
             => services.AddScoped<IPostRepository, PostRepository>();
 
         public static IServiceCollection AddAutoMapper(this IServiceCollection services)

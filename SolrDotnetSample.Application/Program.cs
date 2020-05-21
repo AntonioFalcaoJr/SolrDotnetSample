@@ -38,7 +38,7 @@ namespace SolrDotnetSample.Application
                 {
                     services
                        .AddLogging()
-                       .AddRepository()
+                       .AddRepositories()
                        .AddAutoMapper()
                        .AddSolr(options =>
                         {

@@ -1,4 +1,3 @@
-using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace SolrDotnetSample.Services.IoC

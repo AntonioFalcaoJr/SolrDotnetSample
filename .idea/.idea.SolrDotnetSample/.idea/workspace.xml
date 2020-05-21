@@ -11,13 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="300f01c0-2630-446d-842a-0acd251c8eca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SolrDotnetSample.Application/appsettings.Production.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SolrDotnetSample/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolrDotnetSample/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Application/HostedService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Application/HostedService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/IRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/NoSqlRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/NoSqlRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/RelationalRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/RelationalRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/IService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/IService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/Service.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/Service.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Application/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Application/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Application/SolrDotnetSample.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Application/SolrDotnetSample.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/IoC/IoCRepositories.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/IoC/IoCRepositories.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Services/IoC/IoCServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/IoC/IoCServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.sln" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,41 +36,34 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C494BB81-2820-4C33-848B-A8DE8CD3793C/1D8/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/DB0398C5-D377-40C5-B9B0-886AACCEF622/17E/ExpressionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/221478E6-37FF-4DDB-B017-CB403FA20F5C/6/Console.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Service.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/94F217C4-4194-4AFA-A9D9-549D388CFD15/aa/6ce90281/AddressFamily.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///NoSqlService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E407D4BA-C36C-45DA-982B-FD389A659F31/64/CtorParamConfigurationExpression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Repositories/Mappers/Converters/PostModelToDomainConverte.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F166470-EA2E-420E-BE80-C320F65FF2F2/72/fc0fba84/AllPropertiesMappingManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Application/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Entity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A3DBE483-6645-4FDB-B51D-FEEB0B5C4997/12/DbSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/Dto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F166470-EA2E-420E-BE80-C320F65FF2F2/a4/f1be9ab7/SolrHasValueQuery.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///IService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///RelationalService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F166470-EA2E-420E-BE80-C320F65FF2F2/22/be361722/SolrFieldAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6A779941-3BE8-454B-AE27-725DEEC827EB/6/ApplicationLifetime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/NoSqlRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/Relational/IRelationalService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Application/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/613C4F80-3C00-493E-9EB5-9C6509DE3BF6/1/ServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A97EC963-0B3D-4281-963A-332C16B3496E/24/LambdaExpression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Application/HostedService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/629E8C36-8FEB-44BE-9A62-46D750DBB965/c8/562e9f1d/IServiceCollection.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///RelationalService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Service.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F166470-EA2E-420E-BE80-C320F65FF2F2/73/73f1690c/ISolrReadOnlyOperations`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///HostedService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/NoSql/INoSqlService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F166470-EA2E-420E-BE80-C320F65FF2F2/21/d6bd3723/SolrQueryResults`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/Relational/RelationalService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9670437-F862-4CC9-AF99-2F0156D073FA/4/ConfigurationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SolrDotnetSample.WebApi/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SolrDotnetSample.WebApi/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F166470-EA2E-420E-BE80-C320F65FF2F2/a4/c6b357df/StatsResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SolrDotnetSample.WebApi/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F166470-EA2E-420E-BE80-C320F65FF2F2/3a/ce91a3ca/ISolrOperations`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SolrDotnetSample.WebApi/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Repositories/Models/PostModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Domain/Entities/Post.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Domain/Abstractions/Entity.cs" root0="FORCE_HIGHLIGHTING" />
@@ -88,26 +82,20 @@
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/INoSqlRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Repositories/PostRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4F166470-EA2E-420E-BE80-C320F65FF2F2/88/a6682448/AutoSolrConnection.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///INoSqlService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Service.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/INotification.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/PostService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Application/appsettings.Production.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Services/IoC/IoCServices.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/Notification.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Repositories/Mappers/ModelToDomainProfile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FCA89353-3F21-4B9C-9772-DC0A70CFBA58/7d/86160de6/ServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolrDotnetSample.Repositories/Mappers/DomainToModelProfile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FCA89353-3F21-4B9C-9772-DC0A70CFBA58/97/489c12a9/SolrNetOptions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///IRelationalService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/45D20605-9EC8-44F8-8A47-1D6E18421912/4/LoggerFactoryExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///IRepository.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSqlRepository.cs" />
-        <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Models/Model.cs" />
-        <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/NoSqlService.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/RelationalService.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/INotification.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Domain/Notifications/Notification.cs" />
@@ -150,12 +138,15 @@
         <option value="$PROJECT_DIR$/SolrDotnetSample.Application/appsettings.json" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/IoC/IoCRepositories.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Application/Program.cs" />
-        <option value="$PROJECT_DIR$/SolrDotnetSample.Application/HostedService.cs" />
-        <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/NoSqlRepository.cs" />
-        <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/IService.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/IRepository.cs" />
-        <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/Service.cs" />
         <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/Relational/RelationalRepository.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Repositories/Abstractions/NoSql/NoSqlRepository.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/Service.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/IService.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.Application/HostedService.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.WebApi/Class1.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.WebApi/Program.cs" />
+        <option value="$PROJECT_DIR$/SolrDotnetSample.WebApi/Startup.cs" />
       </list>
     </option>
   </component>
@@ -214,6 +205,7 @@
       <workItem from="1589385076051" duration="6320000" />
       <workItem from="1589500048620" duration="12026000" />
       <workItem from="1589813926217" duration="10380000" />
+      <workItem from="1590094951424" duration="1049000" />
     </task>
     <task id="LOCAL-00001" summary="Adicionando Services">
       <created>1589245396723</created>
@@ -397,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590073143640</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Evoluindo serviços e repositórios">
+      <created>1590094453998</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1590094453998</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +418,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Adicionando Repositories" />
     <MESSAGE value="Adicionando Domain" />
     <MESSAGE value="Adicionando Application" />
     <MESSAGE value="Adicionando demais dependencias" />
@@ -444,7 +442,8 @@
     <MESSAGE value="Definição de entidade para serviço" />
     <MESSAGE value="Adicionando converter, arquivo para add-fields, e outros ajustes" />
     <MESSAGE value="Evoluindo DI e NoSqlRepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="Evoluindo DI e NoSqlRepository" />
+    <MESSAGE value="Evoluindo serviços e repositórios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Evoluindo serviços e repositórios" />
   </component>
   <component name="WindowStateProjectService">
     <state x="4159" y="259" width="632" height="481" key="#Context_Actions" timestamp="1590026919460">
@@ -465,131 +464,135 @@
     </state>
     <state width="735" height="525" key="DebuggerActiveHint/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590069518502" />
     <state width="735" height="525" key="DebuggerActiveHint/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026599279" />
-    <state x="2343" y="279" width="424" height="491" key="FileChooserDialogImpl" timestamp="1589995029827">
+    <state x="2343" y="279" width="424" height="491" key="FileChooserDialogImpl" timestamp="1590095649860">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state x="2343" y="279" width="424" height="491" key="FileChooserDialogImpl/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1589995029827" />
+    <state x="2343" y="279" width="424" height="491" key="FileChooserDialogImpl/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095649860" />
     <state x="2343" y="279" width="424" height="491" key="FileChooserDialogImpl/3520.145.1024.768/1600.0.1920.1080/0.306.1600.900@1600.0.1920.1080" timestamp="1589508974580" />
-    <state width="1874" height="279" key="GridCell.Tab.0.bottom" timestamp="1590083966039">
+    <state width="1874" height="296" key="GridCell.Tab.0.bottom" timestamp="1590095589933">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.0.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666952" />
-    <state width="1874" height="279" key="GridCell.Tab.0.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="296" key="GridCell.Tab.0.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095589933" />
     <state width="1874" height="637" key="GridCell.Tab.0.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727767" />
-    <state width="1874" height="279" key="GridCell.Tab.0.center" timestamp="1590083966039">
+    <state width="1874" height="296" key="GridCell.Tab.0.center" timestamp="1590095589932">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.0.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666952" />
-    <state width="1874" height="279" key="GridCell.Tab.0.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="296" key="GridCell.Tab.0.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095589932" />
     <state width="1874" height="637" key="GridCell.Tab.0.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727767" />
-    <state width="1874" height="279" key="GridCell.Tab.0.left" timestamp="1590083966039">
+    <state width="1874" height="296" key="GridCell.Tab.0.left" timestamp="1590095589932">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.0.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666952" />
-    <state width="1874" height="279" key="GridCell.Tab.0.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="296" key="GridCell.Tab.0.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095589932" />
     <state width="1874" height="637" key="GridCell.Tab.0.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727767" />
-    <state width="1874" height="279" key="GridCell.Tab.0.right" timestamp="1590083966039">
+    <state width="1874" height="296" key="GridCell.Tab.0.right" timestamp="1590095589932">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.0.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666952" />
-    <state width="1874" height="279" key="GridCell.Tab.0.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="296" key="GridCell.Tab.0.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095589932" />
     <state width="1874" height="637" key="GridCell.Tab.0.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727767" />
-    <state width="1874" height="279" key="GridCell.Tab.1.bottom" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.1.bottom" timestamp="1590095234804">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.1.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935668502" />
-    <state width="1874" height="279" key="GridCell.Tab.1.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.1.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234804" />
     <state width="1874" height="637" key="GridCell.Tab.1.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.1.center" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.1.center" timestamp="1590095234804">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.1.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935668501" />
-    <state width="1874" height="279" key="GridCell.Tab.1.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.1.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234804" />
     <state width="1874" height="637" key="GridCell.Tab.1.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.1.left" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.1.left" timestamp="1590095234804">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.1.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935668501" />
-    <state width="1874" height="279" key="GridCell.Tab.1.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.1.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234804" />
     <state width="1874" height="637" key="GridCell.Tab.1.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.1.right" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.1.right" timestamp="1590095234804">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.1.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935668501" />
-    <state width="1874" height="279" key="GridCell.Tab.1.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.1.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234804" />
     <state width="1874" height="637" key="GridCell.Tab.1.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.2.bottom" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.2.bottom" timestamp="1590095234804">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.2.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666862" />
-    <state width="1874" height="279" key="GridCell.Tab.2.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.2.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234804" />
     <state width="1874" height="637" key="GridCell.Tab.2.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.2.center" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.2.center" timestamp="1590095234804">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.2.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666862" />
-    <state width="1874" height="279" key="GridCell.Tab.2.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.2.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234804" />
     <state width="1874" height="637" key="GridCell.Tab.2.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.2.left" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.2.left" timestamp="1590095234804">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.2.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666862" />
-    <state width="1874" height="279" key="GridCell.Tab.2.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.2.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234804" />
     <state width="1874" height="637" key="GridCell.Tab.2.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.2.right" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.2.right" timestamp="1590095234804">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.2.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666862" />
-    <state width="1874" height="279" key="GridCell.Tab.2.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.2.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234804" />
     <state width="1874" height="637" key="GridCell.Tab.2.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.3.bottom" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.3.bottom" timestamp="1590095234804">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.3.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666862" />
-    <state width="1874" height="279" key="GridCell.Tab.3.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.3.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234804" />
     <state width="1874" height="637" key="GridCell.Tab.3.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.3.center" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.3.center" timestamp="1590095234804">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.3.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666862" />
-    <state width="1874" height="279" key="GridCell.Tab.3.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.3.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234804" />
     <state width="1874" height="637" key="GridCell.Tab.3.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.3.left" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.3.left" timestamp="1590095234804">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.3.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666862" />
-    <state width="1874" height="279" key="GridCell.Tab.3.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.3.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234804" />
     <state width="1874" height="637" key="GridCell.Tab.3.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.3.right" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.3.right" timestamp="1590095234804">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.3.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666862" />
-    <state width="1874" height="279" key="GridCell.Tab.3.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.3.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234804" />
     <state width="1874" height="637" key="GridCell.Tab.3.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.4.bottom" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.4.bottom" timestamp="1590095234805">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.4.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666863" />
-    <state width="1874" height="279" key="GridCell.Tab.4.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.4.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234805" />
     <state width="1874" height="637" key="GridCell.Tab.4.bottom/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.4.center" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.4.center" timestamp="1590095234805">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.4.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666863" />
-    <state width="1874" height="279" key="GridCell.Tab.4.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.4.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234805" />
     <state width="1874" height="637" key="GridCell.Tab.4.center/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.4.left" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.4.left" timestamp="1590095234805">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.4.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666862" />
-    <state width="1874" height="279" key="GridCell.Tab.4.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.4.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234805" />
     <state width="1874" height="637" key="GridCell.Tab.4.left/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
-    <state width="1874" height="279" key="GridCell.Tab.4.right" timestamp="1590083966039">
+    <state width="1874" height="279" key="GridCell.Tab.4.right" timestamp="1590095234805">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state width="1554" height="391" key="GridCell.Tab.4.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@0.180.1600.900" timestamp="1589935666863" />
-    <state width="1874" height="279" key="GridCell.Tab.4.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590083966039" />
+    <state width="1874" height="279" key="GridCell.Tab.4.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095234805" />
     <state width="1874" height="637" key="GridCell.Tab.4.right/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590026727768" />
+    <state x="2155" y="256" width="800" height="537" key="Rider.ProjectTemplateDialog.Size" timestamp="1590095735215">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2155" y="256" width="800" height="537" key="Rider.ProjectTemplateDialog.Size/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590095735215" />
     <state x="2118" y="179" width="538" height="665" key="RiderGenerateDialog" timestamp="1590092070486">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
@@ -613,18 +616,18 @@
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="1700" y="63" width="1720" height="917" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1589926173720" />
-    <state x="3717" y="124" width="1249" height="715" key="find.popup" timestamp="1589998774035">
+    <state x="3717" y="124" width="1249" height="715" key="find.popup" timestamp="1590093204432">
       <screen x="3520" y="0" width="1920" height="1080" />
     </state>
-    <state x="3717" y="124" width="1249" height="715" key="find.popup/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1589998774035" />
+    <state x="3717" y="124" width="1249" height="715" key="find.popup/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590093204432" />
     <state x="2224" y="236" key="run.anything.popup" timestamp="1589833399490">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="2224" y="236" key="run.anything.popup/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1589833399490" />
-    <state x="2223" y="211" width="672" height="678" key="search.everywhere.popup" timestamp="1590066672114">
+    <state x="2223" y="211" width="672" height="678" key="search.everywhere.popup" timestamp="1590094288329">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state x="2223" y="211" width="672" height="678" key="search.everywhere.popup/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590066672114" />
+    <state x="2223" y="211" width="672" height="678" key="search.everywhere.popup/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1590094288329" />
     <state x="4143" y="211" width="672" height="678" key="search.everywhere.popup/0.180.1600.900/1600.0.1920.1080/3520.0.1920.1080@3520.0.1920.1080" timestamp="1590015588491" />
   </component>
   <component name="XDebuggerManager">
@@ -642,19 +645,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/Service.cs</url>
-          <line>62</line>
-          <properties documentPath="$PROJECT_DIR$/SolrDotnetSample.Services/Abstractions/Service.cs" initialLine="61">
-            <startOffsets>
-              <option value="2078" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2079" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
