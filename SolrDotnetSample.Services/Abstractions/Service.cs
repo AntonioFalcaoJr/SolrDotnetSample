@@ -4,20 +4,21 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using AutoMapper.Extensions.ExpressionMapping;
 using SolrDotnetSample.Domain.Abstractions;
 using SolrDotnetSample.Repositories.Abstractions;
 
 namespace SolrDotnetSample.Services.Abstractions
 {
-    public abstract class Service<TEntity, TModel, TId> : IService<TEntity, TModel, TId>
+    public abstract class Service<TEntity, TModel, TId> : IService<TEntity, TId>
         where TEntity : Entity<TId>
         where TModel : Model<TId>
         where TId : struct
     {
         private readonly IMapper _mapper;
-        private readonly IRepository<TEntity, TId> _repository;
+        private readonly IRepository<TModel, TId> _repository;
 
-        protected Service(IRepository<TEntity, TId> repository, IMapper mapper)
+        protected Service(IRepository<TModel, TId> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -25,51 +26,81 @@ namespace SolrDotnetSample.Services.Abstractions
 
         public void Delete(TId id)
         {
-            if (Equals(id, Guid.Empty)) return;
+            if (Equals(id, default)) return;
             _repository.Delete(id);
         }
 
         public async Task DeleteAsync(TId id, CancellationToken cancellationToken)
         {
-            if (Equals(id, Guid.Empty)) return;
+            if (Equals(id, default)) return;
             await _repository.DeleteAsync(id, cancellationToken);
         }
 
-        public TEntity Edit(TModel model)
+        public TEntity Edit(TEntity entity)
         {
-            var entity = _mapper.Map<TEntity>(model);
-            if (entity.Valid) _repository.Update(entity);
+            if (entity.Valid == false) return entity;
+            var model = _mapper.Map<TModel>(entity);
+            _repository.Update(model);
             return entity;
         }
 
-        public async Task<TEntity> EditAsync(TModel model, CancellationToken cancellationToken)
+        public async Task<TEntity> EditAsync(TEntity entity, CancellationToken cancellationToken)
         {
-            var entity = _mapper.Map<TEntity>(model);
-            if (entity.Valid) await _repository.UpdateAsync(entity, cancellationToken);
+            if (entity.Valid == false) return entity;
+            var model = _mapper.Map<TModel>(entity);
+            await _repository.UpdateAsync(model, cancellationToken);
             return entity;
         }
 
-        public bool Exists(TId id) => _repository.Exists(id);
+        public bool Exists(TId id)
+            => Equals(id, default) ? default : _repository.Exists(id);
 
-        public async Task<bool> ExistsAsync(TId id, CancellationToken cancellationToken) =>
-            await _repository.ExistsAsync(id, cancellationToken);
+        public async Task<bool> ExistsAsync(TId id, CancellationToken cancellationToken)
+            => Equals(id, default) ? default : await _repository.ExistsAsync(id, cancellationToken);
 
-        public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> predicate) => _repository.Select(predicate);
-
-        public async Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
-            => await _repository.SelectAsync(predicate, cancellationToken);
-
-        public TEntity Save(TModel model)
+        public TEntity GetById(TId id)
         {
-            var entity = _mapper.Map<TEntity>(model);
-            if (entity.Valid) _repository.Insert(entity);
+            if (Equals(id, default)) return default;
+            var model = _repository.SelectById(id);
+            return _mapper.Map<TEntity>(model);
+        }
+
+        public async Task<TEntity> GetByIdAsync(TId id, CancellationToken cancellationToken)
+        {
+            if (Equals(id, default)) return default;
+            var models = await _repository.SelectByIdAsync(id, cancellationToken);
+            return _mapper.Map<TEntity>(models);
+        }
+
+        public IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>> predicate)
+        {
+            if (predicate is null) return default;
+            var mapPredicate = _mapper.MapExpression<Expression<Func<TModel, bool>>>(predicate);
+            var models = _repository.SelectAll(mapPredicate);
+            return _mapper.Map<IEnumerable<TEntity>>(models);
+        }
+
+        public async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
+        {
+            if (predicate is null) return default;
+            var mapPredicate = _mapper.MapExpression<Expression<Func<TModel, bool>>>(predicate);
+            var models = await _repository.SelectAllAsync(mapPredicate, cancellationToken);
+            return _mapper.Map<IEnumerable<TEntity>>(models);
+        }
+
+        public TEntity Save(TEntity entity)
+        {
+            if (entity.Valid == false) return entity;
+            var model = _mapper.Map<TModel>(entity);
+            _repository.Insert(model);
             return entity;
         }
 
-        public async Task<TEntity> SaveAsync(TModel model, CancellationToken cancellationToken)
+        public async Task<TEntity> SaveAsync(TEntity entity, CancellationToken cancellationToken)
         {
-            var entity = _mapper.Map<TEntity>(model);
-            if (entity.Valid) await _repository.InsertAsync(entity, cancellationToken);
+            if (entity.Valid == false) return entity;
+            var model = _mapper.Map<TModel>(entity);
+            if (entity.Valid) await _repository.InsertAsync(model, cancellationToken);
             return entity;
         }
     }
