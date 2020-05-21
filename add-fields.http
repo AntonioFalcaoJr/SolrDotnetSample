@@ -1,0 +1,41 @@
+
+POST http://localhost:8983/solr/my_core/schema
+Content-Type: application/json
+
+{
+   "add-field":{
+      "name":"Description",
+      "type":"string",
+      "stored":true
+      },
+   "add-field":{
+      "name":"Title",
+      "type":"string",
+      "stored":true
+      },
+   "add-field":{
+      "name":"ExpiryDate",
+      "type":"pdate",
+      "stored":true
+      },
+    "add-field":{
+      "name":"IsSold",
+      "type":"boolean",
+      "stored":true  
+     },
+    "add-field":{
+      "name":"IsActive",
+      "type":"boolean",
+      "stored":true  
+     },
+   "add-field":{
+      "name":"PostDate",
+      "type":"pdate",
+       "stored":true
+    },
+   "add-field":{
+      "name":"Price",
+      "type":"pfloat",
+      "stored":true
+    }
+}

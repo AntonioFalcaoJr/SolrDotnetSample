@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -33,9 +32,11 @@ namespace SolrDotnetSample.Application
                 {
                     services.AddLogging()
                        .AddRepository()
-                       .AddAutoMapper()
+
+                        //.AddRepositoryAutoMapper()
                        .AddSolr()
                        .AddServices()
+                       .AddServiceAutoMapper()
                        .AddHostedService<HostedService>();
                 })
                .ConfigureLogging((hostContext, configLogging) =>

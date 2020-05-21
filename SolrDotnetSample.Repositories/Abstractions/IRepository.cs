@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
-using SolrDotnetSample.Domain.Abstractions;
 
 namespace SolrDotnetSample.Repositories.Abstractions
 {
-    public interface IRepository<TEntity, in TId>
-        where TEntity : Entity<TId>
+    public interface IRepository<TModel, in TId>
+        where TModel : Model<TId>
         where TId : struct
     {
         void Delete(TId id);
@@ -17,13 +16,16 @@ namespace SolrDotnetSample.Repositories.Abstractions
         bool Exists(TId id);
         Task<bool> ExistsAsync(TId id, CancellationToken cancellationToken);
 
-        void Insert(TEntity entity);
-        Task InsertAsync(TEntity entity, CancellationToken cancellationToken);
+        void Insert(TModel model);
+        Task InsertAsync(TModel model, CancellationToken cancellationToken);
 
-        IEnumerable<TEntity> Select(Expression<Func<TEntity, bool>> predicate);
-        Task<IEnumerable<TEntity>> SelectAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken);
+        IEnumerable<TModel> SelectAll(Expression<Func<TModel, bool>> predicate);
+        Task<IEnumerable<TModel>> SelectAllAsync(Expression<Func<TModel, bool>> predicate, CancellationToken cancellationToken);
 
-        void Update(TEntity entity);
-        Task UpdateAsync(TEntity entity, CancellationToken cancelletionToken);
+        TModel SelectById(TId id);
+        Task<TModel> SelectByIdAsync(TId id, CancellationToken cancellationToken);
+
+        void Update(TModel model);
+        Task UpdateAsync(TModel model, CancellationToken cancelletionToken);
     }
 }

@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
-using SolrDotnetSample.Repositories.Models;
+using SolrDotnetSample.Domain.Entities;
 using SolrDotnetSample.Services;
 
 namespace SolrDotnetSample.Application
@@ -18,23 +18,14 @@ namespace SolrDotnetSample.Application
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
-            Console.WriteLine("UUUUUUUUUUUUUPPPPP");
+            var post = new Post(Guid.NewGuid(), "Description", "Title", 0.0, DateTime.Now, DateTime.Now, true, true);
+            await _postService.SaveAsync(post, cancellationToken);
 
-            await _postService.SaveAsync(new SolrPostModel
-            {
-                Description = "kkkkk",
-                Id = Guid.NewGuid(),
-                IsActive = true,
-                Price = 0.0,
-                Title = "Pega essa"
-            }, cancellationToken);
+            var postByDb = await _postService.GetByIdAsync(post.Id, cancellationToken);
+            Console.WriteLine(postByDb?.Description ?? "Erro");
         }
 
         public Task StopAsync(CancellationToken cancellationToken)
-        {
-            Console.WriteLine("DOOOOOOOWWWNNNNN");
-
-            return Task.FromResult(cancellationToken);
-        }
+            => Task.FromResult(cancellationToken);
     }
 }
