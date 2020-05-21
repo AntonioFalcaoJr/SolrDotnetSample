@@ -10,16 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="300f01c0-2630-446d-842a-0acd251c8eca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SolrDotnetSample.Application/appsettings.Production.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SolrDotnetSample/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolrDotnetSample/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Application/HostedService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Application/HostedService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Application/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Application/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Application/SolrDotnetSample.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Application/SolrDotnetSample.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Repositories/IoC/IoCRepositories.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Repositories/IoC/IoCRepositories.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.Services/IoC/IoCServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.Services/IoC/IoCServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolrDotnetSample.sln" beforeDir="false" afterPath="$PROJECT_DIR$/SolrDotnetSample.sln" afterDir="false" />
-    </list>
+    <list default="true" id="300f01c0-2630-446d-842a-0acd251c8eca" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,7 +196,7 @@
       <workItem from="1589385076051" duration="6320000" />
       <workItem from="1589500048620" duration="12026000" />
       <workItem from="1589813926217" duration="10380000" />
-      <workItem from="1590094951424" duration="1049000" />
+      <workItem from="1590094951424" duration="1730000" />
     </task>
     <task id="LOCAL-00001" summary="Adicionando Services">
       <created>1589245396723</created>
@@ -396,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590094453998</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Adicionando projeto de WebApi">
+      <created>1590096075769</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1590096075769</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,7 +416,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Adicionando Domain" />
     <MESSAGE value="Adicionando Application" />
     <MESSAGE value="Adicionando demais dependencias" />
     <MESSAGE value="gitignore" />
@@ -443,7 +440,8 @@
     <MESSAGE value="Adicionando converter, arquivo para add-fields, e outros ajustes" />
     <MESSAGE value="Evoluindo DI e NoSqlRepository" />
     <MESSAGE value="Evoluindo serviços e repositórios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Evoluindo serviços e repositórios" />
+    <MESSAGE value="Adicionando projeto de WebApi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionando projeto de WebApi" />
   </component>
   <component name="WindowStateProjectService">
     <state x="4159" y="259" width="632" height="481" key="#Context_Actions" timestamp="1590026919460">
