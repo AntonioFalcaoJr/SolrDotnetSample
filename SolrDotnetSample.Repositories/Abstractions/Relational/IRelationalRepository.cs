@@ -1,8 +1,6 @@
-using SolrDotnetSample.Domain.Abstractions;
-
 namespace SolrDotnetSample.Repositories.Abstractions.Relational
 {
-    public interface IRelationalRepository<TEntity, in TId> : IRepository<TEntity, TId>
-        where TEntity : Entity<TId>
+    public interface IRelationalRepository<TModel, in TId> : IRepository<TModel, TId>
+        where TModel : Model<TId>
         where TId : struct { }
 }

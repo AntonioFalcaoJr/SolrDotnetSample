@@ -5,38 +5,37 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using SolrDotnetSample.Domain.Abstractions;
 
 namespace SolrDotnetSample.Repositories.Abstractions.Relational
 {
-    public abstract class RelationalRepository<TEntity, TId> : IRelationalRepository<TEntity, TId>
-        where TEntity : Entity<TId>
+    public abstract class RelationalRepository<TModel, TId> : IRelationalRepository<TModel, TId>
+        where TModel : Model<TId>
         where TId : struct
     {
         private readonly DbContext _context;
-        private readonly DbSet<TEntity> _dbSet;
+        private readonly DbSet<TModel> _dbSet;
 
         protected RelationalRepository(DbContext context)
         {
             _context = context;
-            _dbSet = context.Set<TEntity>();
+            _dbSet = context.Set<TModel>();
         }
 
         public virtual void Delete(TId id)
         {
-            var entities = Select(x => Equals(x.Id, id));
-            if (entities is null || entities.Any() == false) return;
+            var enumerable = SelectAll(x => Equals(x.Id, id));
+            if (enumerable is null || enumerable.Any() == false) return;
 
-            _dbSet.RemoveRange(entities);
+            _dbSet.RemoveRange(enumerable);
             _context.SaveChanges();
         }
 
         public virtual async Task DeleteAsync(TId id, CancellationToken cancellationToken)
         {
-            var entities = await SelectAsync(x => Equals(x.Id, id), cancellationToken).ConfigureAwait(false);
-            if (entities is null || entities.Any() == false) return;
+            var enumerable = await SelectAllAsync(x => Equals(x.Id, id), cancellationToken).ConfigureAwait(false);
+            if (enumerable is null || enumerable.Any() == false) return;
 
-            _dbSet.RemoveRange(entities);
+            _dbSet.RemoveRange(enumerable);
             await _context.SaveChangesAsync(true, cancellationToken);
         }
 
@@ -45,41 +44,43 @@ namespace SolrDotnetSample.Repositories.Abstractions.Relational
         public virtual async Task<bool> ExistsAsync(TId id, CancellationToken cancellationToken)
             => await _dbSet.AnyAsync(x => Equals(x.Id, id), cancellationToken);
 
-        public virtual void Insert(TEntity entity)
+        public virtual void Insert(TModel model)
         {
-            if (Exists(entity.Id)) return;
-
-            _dbSet.Add(entity);
+            if (Exists(model.Id)) return;
+            _dbSet.Add(model);
             _context.SaveChanges();
         }
 
-        public virtual async Task InsertAsync(TEntity entity, CancellationToken cancellationToken)
+        public virtual async Task InsertAsync(TModel model, CancellationToken cancellationToken)
         {
-            if (await ExistsAsync(entity.Id, cancellationToken).ConfigureAwait(false)) return;
-
-            await _dbSet.AddAsync(entity, cancellationToken);
+            if (await ExistsAsync(model.Id, cancellationToken).ConfigureAwait(false)) return;
+            await _dbSet.AddAsync(model, cancellationToken);
             await _context.SaveChangesAsync(true, cancellationToken);
         }
 
-        public virtual IEnumerable<TEntity> Select(Expression<Func<TEntity, bool>> predicate)
+        public virtual IEnumerable<TModel> SelectAll(Expression<Func<TModel, bool>> predicate)
             => _dbSet.AsNoTracking().Where(predicate);
 
-        public virtual async Task<IEnumerable<TEntity>> SelectAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
+        public virtual async Task<IEnumerable<TModel>> SelectAllAsync(Expression<Func<TModel, bool>> predicate, CancellationToken cancellationToken)
             => await _dbSet.AsNoTracking().Where(predicate).ToArrayAsync(cancellationToken);
 
-        public virtual void Update(TEntity entity)
-        {
-            if (Exists(entity.Id) == false) return;
+        public TModel SelectById(TId id)
+            => _dbSet.AsNoTracking().FirstOrDefault(model => Equals(model.Id, id));
 
-            _dbSet.Update(entity);
+        public async Task<TModel> SelectByIdAsync(TId id, CancellationToken cancellationToken)
+            => await _dbSet.AsNoTracking().FirstOrDefaultAsync(model => Equals(model.Id, id), cancellationToken);
+
+        public virtual void Update(TModel model)
+        {
+            if (Exists(model.Id) == false) return;
+            _dbSet.Update(model);
             _context.SaveChanges();
         }
 
-        public virtual async Task UpdateAsync(TEntity entity, CancellationToken cancellationToken)
+        public virtual async Task UpdateAsync(TModel model, CancellationToken cancellationToken)
         {
-            if (await ExistsAsync(entity.Id, cancellationToken).ConfigureAwait(false) == false) return;
-
-            _dbSet.Update(entity);
+            if (await ExistsAsync(model.Id, cancellationToken).ConfigureAwait(false) == false) return;
+            _dbSet.Update(model);
             await _context.SaveChangesAsync(cancellationToken);
         }
     }
