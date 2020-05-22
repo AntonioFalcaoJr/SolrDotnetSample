@@ -5,7 +5,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SolrDotnetSample.Domain.Entities;
 using SolrDotnetSample.Services;
-using SolrDotnetSample.Services.Dtos;
+using SolrDotnetSample.WebApi.Dtos;
 
 namespace SolrDotnetSample.WebApi.Controllers.v1
 {
@@ -33,7 +33,7 @@ namespace SolrDotnetSample.WebApi.Controllers.v1
         [HttpGet]
         public ActionResult<IEnumerable<Post>> GetAll()
         {
-            var posts = _postService.GetAll(x => x.Valid);
+            var posts = _postService.GetAll(x => x.Id != null);
             if (posts?.Any() == false) return NoContent();
             return Ok(posts);
         }

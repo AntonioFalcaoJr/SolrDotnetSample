@@ -8,7 +8,7 @@ namespace SolrDotnetSample.Repositories.Mappers
     {
         public DomainToModelProfile()
         {
-            CreateMap<Post, PostModel>().ReverseMap();
+            CreateMap<Post, PostModel>();
         }
     }
 }

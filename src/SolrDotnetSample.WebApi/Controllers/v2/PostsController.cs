@@ -7,7 +7,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SolrDotnetSample.Domain.Entities;
 using SolrDotnetSample.Services;
-using SolrDotnetSample.Services.Dtos;
+using SolrDotnetSample.WebApi.Dtos;
 
 namespace SolrDotnetSample.WebApi.Controllers.v2
 {
@@ -35,7 +35,7 @@ namespace SolrDotnetSample.WebApi.Controllers.v2
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Post>>> GetAllAsync(CancellationToken cancellationToken)
         {
-            var posts = await _postService.GetAllAsync(x => x.Valid, cancellationToken);
+            var posts = await _postService.GetAllAsync(x => x.Id != null, cancellationToken);
             if (posts?.Any() == false) return NoContent();
             return Ok(posts);
         }

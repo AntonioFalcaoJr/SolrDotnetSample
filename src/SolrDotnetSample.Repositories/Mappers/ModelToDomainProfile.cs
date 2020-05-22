@@ -10,6 +10,7 @@ namespace SolrDotnetSample.Repositories.Mappers
         public ModelToDomainProfile()
         {
             CreateMap<PostModel, Post>()
+               .ForMember(dest => dest.Valid, opt => opt.Ignore())
                .ConvertUsing<PostModelToDomainConverte>();
         }
     }

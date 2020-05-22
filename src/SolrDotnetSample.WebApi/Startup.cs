@@ -1,10 +1,13 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SolrDotnetSample.Repositories.IoC;
+using SolrDotnetSample.Repositories.Mappers;
 using SolrDotnetSample.Services.IoC;
+using SolrDotnetSample.WebApi.Mappers;
 
 namespace SolrDotnetSample.WebApi
 {
@@ -20,6 +23,7 @@ namespace SolrDotnetSample.WebApi
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
+            app.UseApiVersioning();
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
@@ -29,10 +33,10 @@ namespace SolrDotnetSample.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddApiVersioning();
             services.AddRepositories();
-            services.AddAutoMapper();
             services.AddServices();
-
+            services.AddAutoMapper(typeof(DtoToDomainProfile), typeof(ModelToDomainProfile), typeof(DomainToModelProfile));
             services.AddSolr(options =>
             {
                 options.BaseAddress = Configuration["Solr:BaseAddress"];

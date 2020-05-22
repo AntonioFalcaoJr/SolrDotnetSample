@@ -1,7 +1,7 @@
 using System;
 using SolrDotnetSample.Services.Abstractions;
 
-namespace SolrDotnetSample.Services.Dtos
+namespace SolrDotnetSample.WebApi.Dtos
 {
     public class PostDto : Dto<Guid>
     {

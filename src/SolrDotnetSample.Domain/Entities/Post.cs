@@ -25,7 +25,7 @@ namespace SolrDotnetSample.Domain.Entities
         public double Price { get; private set; }
         public string Title { get; private set; }
 
-        protected sealed override void SetId(Guid id) => Id = id;
+        protected sealed override void SetId(Guid id) => Id = Equals(id, default(Guid)) ? Guid.NewGuid() : id;
         private void SetDescription(string description) => Description = description;
         private void SetExpiryDate(DateTime expiryDate) => ExpiryDate = expiryDate;
         private void SetIsActive(bool isActive) => IsActive = isActive;
