@@ -18,40 +18,29 @@ Se faz necessário ambiente com seguintes recursos:
 
 * [.NET Core SDK](https://dotnet.microsoft.com/download) - The framework used.
 
-To check this functionality:
+> To check this functionality:
 
-```c#
+```bash
 dotnet --version
 ```
-
-For more details
-
-```c#
+> For more details
+```bash
 dotnet --info
 ```
-
 * [Entity Framework Core .NET Command-line Tools](https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet/) - The ORM service used.
-
-To install:
-
+> To install:
 ```bash
 dotnet tool install --global dotnet-ef
 ```
-
-To check this functionality:
-
+> To check this functionality:
 ```bash
 dotnet-ef --version
 ```
-
 * [Docker](https://www.docker.com/) - The container platform used
-
-To check this functionality:
-
+> To check this functionality:
 ```bash
 docker --version
 ```
-
 ### Installing
 
 Com o uso de **containerização**, podemos provisionar de forma prática a infraestrtutura necessária.
@@ -78,16 +67,16 @@ O índice padrão, referido como [Core](https://lucene.apache.org/solr/guide/6_6
 
 Uma vez provisionado o ambiente, podemos semear dados atravez dos passos:
 
-1.  Aplicar migrations do EF Core ao dbcontext relacional.
+> 1.  Aplicar migrations do EF Core ao dbcontext relacional.
 ```bash
 dotnet ef database update -s ./src/SolrDotnetSample.WebApi/ -p ./src/SolrDotnetSample.Repositories/
 ```
-2. Executar aplicação console e selecionar opção de semeadura.
+> 2. Executar aplicação console e selecionar opção de semeadura.
 
 ```bash
 docker build -t seed -f ./console-dockerfile . && docker run -it seed
 ```
-3. Aplicar migrations ao dbcontext relacional.
+> 3. Aplicar migrations ao dbcontext relacional.
 ```bash
 docker-compose -f solr-compose.yml up
 ```
@@ -108,7 +97,7 @@ Para executarmos testes de forma funcional, devemos inicialmente executar o proj
 dotnet run -p ./src/SolrDotnetSample.WebApi/
 ```
 
-O roteamento segue o padrão `http://hostname:port/api/v{version}/controller`
+> O roteamento segue o padrão `http://hostname:port/api/v{version}/controller`
 
 Para realizar chamadas, pode estar utilizando o arquivo [./basic-api-call.http](./basic-api-call.http) atravez da extenção [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), por exemplo:.
 
@@ -155,7 +144,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **Antônio Falcão** - [GitHub](https://github.com/AntonioFalcao)
 
-See also the list of [contributors](https://github.com/AntonioFalcao/SolrDotnetSample/graphs/contributors) who participated in this project.
+> See also the list of [contributors](https://github.com/AntonioFalcao/SolrDotnetSample/graphs/contributors) who participated in this project.
 
 ## License
 
