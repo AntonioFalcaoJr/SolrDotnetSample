@@ -1,0 +1,16 @@
+POST https://localhost:5001/api/v1/posts
+Content-Type: application/json
+
+{
+  "Description": "Description",
+  "ExpiryDate": "2020-01-01",
+  "IsActive": true,
+  "IsSold": true,
+  "PostDate": "2020-01-01",
+  "Price": 0,
+  "Title": "Title"
+}
+
+
+###
+GET https://localhost:5001/api/v1/posts

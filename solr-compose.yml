@@ -5,11 +5,11 @@ services:
     image: solr
     ports:
       - "8983:8983"
-    volumes:
-      - solrdata:/opt/solr/server/solr/true_posts
     entrypoint:
       - solr-precreate
       - my_core
+    volumes:
+      - solrdata:/opt/solr/server/solr/true_posts
     networks:
       - solr
 
