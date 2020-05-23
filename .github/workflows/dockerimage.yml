@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Console App - Docker Image CI
 
 on:
   push:
