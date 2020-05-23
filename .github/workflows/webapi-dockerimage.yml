@@ -1,4 +1,4 @@
-name: Console App - Docker Image CI
+name: WebApi - Docker Image CI
 
 on:
   push:
@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file ./consoleApp.Dockerfile --tag consoleapp:$(date +%s)
+      run: docker build . --file ./webApi.Dockerfile --tag webapi:$(date +%s)
