@@ -74,23 +74,21 @@ dotnet ef database update -s ./src/SolrDotnetSample.WebApi/ -p ./src/SolrDotnetS
 > 2. Executar aplicação console e selecionar opção de semeadura.
 
 ```bash
-docker build -t seed -f ./console-dockerfile . && docker run -it seed
+docker build -t seed -f ./consoleApp.Dockerfile . && docker run -it seed
 ```
 > 3. Aplicar migrations ao dbcontext relacional.
 ```bash
 docker-compose -f solr-compose.yml up
 ```
 
-## Running the tests1
+## Running the tests
 
-#### Automated testing
+#### Automated tests
 Os testes unitários e de integração podem ser executados com o respectivo comando:
 ```bash
 dotnet test
 ```
-
 #### Functional tests
-
 Para executarmos testes de forma funcional, devemos inicialmente executar o projeto para disponibilizar o serviço Web. O 
 
 ```bash
