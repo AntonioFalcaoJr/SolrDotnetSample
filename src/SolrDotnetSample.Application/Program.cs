@@ -1,10 +1,13 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SolrDotnetSample.Application.Seeders;
 using SolrDotnetSample.Repositories.IoC;
+using SolrDotnetSample.Repositories.Mappers;
 using SolrDotnetSample.Services.IoC;
 
 namespace SolrDotnetSample.Application
@@ -39,14 +42,14 @@ namespace SolrDotnetSample.Application
                     services
                        .AddLogging()
                        .AddRepositories()
-                       .AddAutoMapper()
+                       .AddServices()
+                       .AddAutoMapper(typeof(ModelToDomainProfile), typeof(DomainToModelProfile))
                        .AddSolr(options =>
                         {
                             options.BaseAddress = hostContext.Configuration["Solr:BaseAddress"];
                             options.Core = hostContext.Configuration["Solr:Core"];
-                            ;
                         })
-                       .AddServices()
+                       .AddScoped<ISolrSeeder, SolrSeeder>()
                        .AddHostedService<HostedService>();
                 })
                .ConfigureLogging((hostContext, configLogging) =>

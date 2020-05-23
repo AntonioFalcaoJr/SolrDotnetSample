@@ -22,23 +22,23 @@ namespace SolrDotnetSample.Repositories.Abstractions.NoSql
 
         public virtual void Delete(TId id)
         {
-            if (Equals(id, default)) return;
+            if (Equals(id, default(TId))) return;
             _solrOperations.Delete(id.ToString());
             _solrOperations.Commit();
         }
 
         public virtual async Task DeleteAsync(TId id, CancellationToken cancellationToken)
         {
-            if (Equals(id, default)) return;
+            if (Equals(id, default(TId))) return;
             await _solrOperations.DeleteAsync(id.ToString());
             await _solrOperations.CommitAsync();
         }
 
         public virtual bool Exists(TId id)
-            => Equals(id, default) ? default : SelectById(id) is {};
+            => Equals(id, default(TId)) ? default : SelectById(id) is {};
 
         public virtual async Task<bool> ExistsAsync(TId id, CancellationToken cancellationToken)
-            => Equals(id, default) ? default : await SelectByIdAsync(id, cancellationToken) is {};
+            => Equals(id, default(TId)) ? default : await SelectByIdAsync(id, cancellationToken) is {};
 
         public virtual void Insert(TModel model)
         {
@@ -74,14 +74,14 @@ namespace SolrDotnetSample.Repositories.Abstractions.NoSql
 
         public virtual TModel SelectById(TId id)
         {
-            if (Equals(id, default)) return default;
+            if (Equals(id, default(TId))) return default;
             var queryByField = new SolrQueryByField(IdField, id.ToString());
             return _solrOperations.Query(queryByField).FirstOrDefault();
         }
 
         public virtual async Task<TModel> SelectByIdAsync(TId id, CancellationToken cancellationToken)
         {
-            if (Equals(id, default)) return default;
+            if (Equals(id, default(TId))) return default;
             var queryByField = new SolrQueryByField(IdField, id.ToString()) {Quoted = false};
             var solrQueryResults = await _solrOperations.QueryAsync(queryByField, cancellationToken);
             return solrQueryResults?.FirstOrDefault();

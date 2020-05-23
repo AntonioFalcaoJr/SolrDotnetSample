@@ -23,7 +23,7 @@ namespace SolrDotnetSample.Repositories.Abstractions.Relational
 
         public virtual void Delete(TId id)
         {
-            if (Equals(id, default)) return;
+            if (Equals(id, default(TId))) return;
             var model = SelectById(id);
             if (model is null) return;
             _dbSet.Remove(model);
@@ -32,7 +32,7 @@ namespace SolrDotnetSample.Repositories.Abstractions.Relational
 
         public virtual async Task DeleteAsync(TId id, CancellationToken cancellationToken)
         {
-            if (Equals(id, default)) return;
+            if (Equals(id, default(TId))) return;
             var model = await SelectByIdAsync(id, cancellationToken).ConfigureAwait(false);
             if (model is null) return;
             _dbSet.Remove(model);
@@ -40,10 +40,10 @@ namespace SolrDotnetSample.Repositories.Abstractions.Relational
         }
 
         public virtual bool Exists(TId id)
-            => Equals(id, default) ? default : _dbSet.Any(x => Equals(x.Id, id));
+            => Equals(id, default(TId)) ? default : _dbSet.Any(x => Equals(x.Id, id));
 
         public virtual async Task<bool> ExistsAsync(TId id, CancellationToken cancellationToken)
-            => Equals(id, default) ? default : await _dbSet.AnyAsync(x => Equals(x.Id, id), cancellationToken);
+            => Equals(id, default(TId)) ? default : await _dbSet.AnyAsync(x => Equals(x.Id, id), cancellationToken);
 
         public virtual void Insert(TModel model)
         {
@@ -82,10 +82,10 @@ namespace SolrDotnetSample.Repositories.Abstractions.Relational
             => predicate is null ? default : await _dbSet.AsNoTracking().Where(predicate).ToArrayAsync(cancellationToken);
 
         public TModel SelectById(TId id)
-            => Equals(id, default) ? default : _dbSet.AsNoTracking().FirstOrDefault(model => Equals(model.Id, id));
+            => Equals(id, default(TId)) ? default : _dbSet.AsNoTracking().FirstOrDefault(model => Equals(model.Id, id));
 
         public async Task<TModel> SelectByIdAsync(TId id, CancellationToken cancellationToken)
-            => Equals(id, default) ? default : await _dbSet.AsNoTracking().FirstOrDefaultAsync(model => Equals(model.Id, id), cancellationToken);
+            => Equals(id, default(TId)) ? default : await _dbSet.AsNoTracking().FirstOrDefaultAsync(model => Equals(model.Id, id), cancellationToken);
 
         public virtual void Update(TModel model)
         {

@@ -1,12 +1,12 @@
-ARG ASPNET_VERSION="3.1.4-alpine3.11"
+ARG RUNTIME_VERSION="3.1.4-alpine3.11"
 ARG SDK_VERSION="3.1.300-alpine3.11"
 
-FROM mcr.microsoft.com/dotnet/core/aspnet AS base
+FROM mcr.microsoft.com/dotnet/core/runtime:$RUNTIME_VERSION AS base
 WORKDIR /app
 
-ENV ASPNETCORE_ENVIRONMENT=Development
+ENV DOTNET_ENVIRONMENT=Development
 
-FROM mcr.microsoft.com/dotnet/core/sdk AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:$SDK_VERSION AS build
 WORKDIR /src
 
 COPY ./src/SolrDotnetSample.Domain/*.csproj ./SolrDotnetSample.Domain/
@@ -14,7 +14,8 @@ COPY ./src/SolrDotnetSample.Repositories/*.csproj ./SolrDotnetSample.Repositorie
 COPY ./src/SolrDotnetSample.Services/*.csproj ./SolrDotnetSample.Services/
 COPY ./src/SolrDotnetSample.Application/*.csproj ./SolrDotnetSample.Application/
 
-RUN dotnet restore ./SolrDotnetSample.Application --disable-parallel
+COPY ./NuGet.Config /
+RUN dotnet restore ./SolrDotnetSample.Application
 
 COPY ./src/SolrDotnetSample.Domain/. ./SolrDotnetSample.Domain/
 COPY ./src/SolrDotnetSample.Repositories/. ./SolrDotnetSample.Repositories/
@@ -22,10 +23,10 @@ COPY ./src/SolrDotnetSample.Services/. ./SolrDotnetSample.Services/
 COPY ./src/SolrDotnetSample.Application/. ./SolrDotnetSample.Application/
 
 WORKDIR /src/SolrDotnetSample.Application/
-RUN dotnet build -c Release --no-restore -o /app/build 
+RUN dotnet build -c Release -o /app/build 
 
 FROM build AS publish
-RUN dotnet publish -c Release --no-restore -o /app/publish
+RUN dotnet publish -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app

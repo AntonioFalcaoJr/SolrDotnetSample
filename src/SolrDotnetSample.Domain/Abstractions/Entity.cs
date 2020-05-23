@@ -14,7 +14,7 @@ namespace SolrDotnetSample.Domain.Abstractions
         public TId Id { get; protected set; }
         public INotification Notification { get; }
         public bool Valid => Notification?.Errors?.Any() == false;
-
+        
         protected abstract void SetId(TId id);
     }
 }

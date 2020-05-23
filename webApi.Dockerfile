@@ -16,6 +16,7 @@ COPY ./src/SolrDotnetSample.Repositories/*.csproj ./SolrDotnetSample.Repositorie
 COPY ./src/SolrDotnetSample.Services/*.csproj ./SolrDotnetSample.Services/
 COPY ./src/SolrDotnetSample.WebApi/*.csproj ./SolrDotnetSample.WebApi/
 
+COPY ./NuGet.Config /
 RUN dotnet restore ./SolrDotnetSample.WebApi
 
 COPY ./src/SolrDotnetSample.Domain/. ./SolrDotnetSample.Domain/
@@ -24,10 +25,10 @@ COPY ./src/SolrDotnetSample.Services/. ./SolrDotnetSample.Services/
 COPY ./src/SolrDotnetSample.WebApi/. ./SolrDotnetSample.WebApi/
 
 WORKDIR /src/SolrDotnetSample.WebApi/
-RUN dotnet build -c Release --no-restore -o /app/build 
+RUN dotnet build -c Release -o /app/build 
 
 FROM build AS publish
-RUN dotnet publish -c Release --no-restore -o /app/publish
+RUN dotnet publish -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
