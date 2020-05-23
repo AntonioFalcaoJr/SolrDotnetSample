@@ -1,13 +1,14 @@
-ARG DOTNET_VERSION="3.1-alpine"
+ARG ASPNET_VERSION="3.1.4-alpine3.11"
+ARG SDK_VERSION="3.1.300-alpine3.11"
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:$DOTNET_VERSION AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:$ASPNET_VERSION AS base
 WORKDIR /app
 EXPOSE 5000
 
 ENV ASPNETCORE_URLS=http://*:5000
 ENV ASPNETCORE_ENVIRONMENT=Development
 
-FROM mcr.microsoft.com/dotnet/core/sdk:$DOTNET_VERSION AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:$SDK_VERSION AS build
 WORKDIR /src
 
 COPY ./src/SolrDotnetSample.Domain/*.csproj ./SolrDotnetSample.Domain/

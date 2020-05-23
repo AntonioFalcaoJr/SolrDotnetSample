@@ -1,6 +1,8 @@
 # Sample with .NET Core and SolrNet
 
 ![.NET Core](https://github.com/AntonioFalcao/SolrDotnetSample/workflows/.NET%20Core/badge.svg?branch=master)
+![Console App - Docker Image CI](https://github.com/AntonioFalcao/SolrDotnetSample/workflows/Console%20App%20-%20Docker%20Image%20CI/badge.svg?branch=master)
+![WebApi - Docker Image CI](https://github.com/AntonioFalcao/SolrDotnetSample/workflows/WebApi%20-%20Docker%20Image%20CI/badge.svg?branch=master)
 
 Este projeto tem como objetivo explorar o funcionamento do **SolrNet** no consumo do serviço de search engine **Solr** em projetos .**NET Core.**
 
