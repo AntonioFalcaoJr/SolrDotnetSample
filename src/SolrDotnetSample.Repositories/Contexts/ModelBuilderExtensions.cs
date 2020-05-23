@@ -14,6 +14,7 @@ namespace SolrDotnetSample.Repositories.Contexts
             for (var i = 0; i < 500; i++)
                 posts.Add(new PostModel
                 {
+                    Id = Guid.NewGuid(),
                     Description = "Description",
                     ExpiryDate = DateTime.Now,
                     IsSold = true,
