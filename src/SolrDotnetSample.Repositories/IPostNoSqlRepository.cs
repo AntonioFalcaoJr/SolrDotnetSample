@@ -4,5 +4,5 @@ using SolrDotnetSample.Repositories.Models;
 
 namespace SolrDotnetSample.Repositories
 {
-    public interface IPostRepository : INoSqlRepository<PostModel, Guid> { }
+    public interface IPostNoSqlRepository : INoSqlRepository<PostModel, Guid> { }
 }

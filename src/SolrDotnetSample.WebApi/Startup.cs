@@ -1,9 +1,11 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SolrDotnetSample.Repositories.Contexts;
 using SolrDotnetSample.Repositories.IoC;
 using SolrDotnetSample.Repositories.Mappers;
 using SolrDotnetSample.Services.IoC;
@@ -20,7 +22,7 @@ namespace SolrDotnetSample.WebApi
 
         private IConfiguration Configuration { get; }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, SolrDotnetSampleContext context)
         {
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
             app.UseApiVersioning();
@@ -28,6 +30,7 @@ namespace SolrDotnetSample.WebApi
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints => endpoints.MapControllers());
+            context.Database.Migrate();
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -37,6 +40,17 @@ namespace SolrDotnetSample.WebApi
             services.AddRepositories();
             services.AddServices();
             services.AddAutoMapper(typeof(DtoToDomainProfile), typeof(ModelToDomainProfile), typeof(DomainToModelProfile));
+
+            services.AddMvcCore(options =>
+            {
+                options.SuppressAsyncSuffixInActionNames = false;
+            });
+
+            services.AddDbContext(options =>
+            {
+                options.ConnectionString = Configuration.GetConnectionString("DefaultConnection");
+            });
+
             services.AddSolr(options =>
             {
                 options.BaseAddress = Configuration["Solr:BaseAddress"];

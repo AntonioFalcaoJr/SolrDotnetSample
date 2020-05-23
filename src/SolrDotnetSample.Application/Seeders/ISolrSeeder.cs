@@ -5,6 +5,6 @@ namespace SolrDotnetSample.Application.Seeders
 {
     public interface ISolrSeeder
     {
-        Task Seed(CancellationToken cancellationToken);
+        Task SeedAsync(CancellationToken cancellationToken);
     }
 }

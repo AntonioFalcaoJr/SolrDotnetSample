@@ -5,9 +5,9 @@ using SolrNet;
 
 namespace SolrDotnetSample.Repositories
 {
-    public class PostRepository : NoSqlRepository<PostModel, Guid>, IPostRepository
+    public class PostNoSqlRepository : NoSqlRepository<PostModel, Guid>, IPostNoSqlRepository
     {
-        public PostRepository(ISolrOperations<PostModel> solrOperations)
+        public PostNoSqlRepository(ISolrOperations<PostModel> solrOperations)
             : base(solrOperations) { }
     }
 }

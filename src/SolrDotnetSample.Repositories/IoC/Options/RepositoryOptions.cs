@@ -1,4 +1,4 @@
-namespace SolrDotnetSample.Repositories.IoC
+namespace SolrDotnetSample.Repositories.IoC.Options
 {
     public class RepositoryOptions
     {

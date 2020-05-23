@@ -9,7 +9,7 @@ namespace SolrDotnetSample.Services
 {
     public class PostService : Service<Post, PostModel, Guid>, IPostService
     {
-        public PostService(IPostRepository repository, IMapper mapper)
-            : base(repository, mapper) { }
+        public PostService(IPostNoSqlRepository noSqlRepository, IMapper mapper)
+            : base(noSqlRepository, mapper) { }
     }
 }

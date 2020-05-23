@@ -44,6 +44,10 @@ namespace SolrDotnetSample.Application
                        .AddRepositories()
                        .AddServices()
                        .AddAutoMapper(typeof(ModelToDomainProfile), typeof(DomainToModelProfile))
+                       .AddDbContext(options =>
+                        {
+                            options.ConnectionString = hostContext.Configuration.GetConnectionString("DefaultConnection");
+                        })
                        .AddSolr(options =>
                         {
                             options.BaseAddress = hostContext.Configuration["Solr:BaseAddress"];
