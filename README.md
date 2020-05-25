@@ -45,9 +45,9 @@ docker --version
 ```
 ### Installing
 
-Com o uso de **containerização**, podemos provisionar de forma prática a infraestrtutura necessária.
+Com o uso de **containerização**, podemos provisionar de forma prática a infraestrutura necessária.
 
-Inicialmente utilizaremos o serviço **Solr**, para atender a necessidade de **Search Engine**, atravez do compose [`./solr-compose`](./solr-compose.yml).
+Inicialmente utilizaremos o serviço **Solr**, para atender a necessidade de **Search Engine**, através do compose [`./solr-compose`](./solr-compose.yml).
 
 ```bash
 docker-compose -f solr-compose.yml up -d
@@ -92,7 +92,7 @@ Content-Type: application/json
 ```
 #### Semeando dados no Solr
 
-Uma vez provisionado o ambiente e configurado os fields, podemos semear dados atravez dos passos:
+Uma vez provisionado o ambiente e configurado os fields, podemos semear dados através dos passos:
 
  1.  Aplicar migrations do EF Core, que já se encarregará do Seed para o DB relacional.
  > Nesta etapa irá ocorrer a semeadura de dados para o DB relacional. 
@@ -122,7 +122,7 @@ docker build -t webapi -f ./webApi.Dockerfile . && docker run -p 5000:5000 webap
 
 > O roteamento segue o padrão `http://hostname:port/api/v{version}/controller`
 
-Para realizar chamadas, pode estar utilizando o arquivo [./basic-api-call.http](./basic-api-call.http) atravez da extenção [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), por exemplo:.
+Para realizar chamadas, pode estar utilizando o arquivo [./basic-api-call.http](./basic-api-call.http) através da extensão [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), por exemplo:.
 
 > `/api/v1/...` utiliza o banco de dados relacional.     
 > `/api/v2/...` utiliza o Solr
@@ -152,7 +152,7 @@ Content-Type: application/json
 ```
 ## Deployment
 
-Detalhes sobre esteria (CI/CD) disponíveis em [Project GitHub Actions](https://github.com/AntonioFalcao/SolrDotnetSample/actions)
+Detalhes sobre esteira (CI/CD) disponíveis em [Project GitHub Actions](https://github.com/AntonioFalcao/SolrDotnetSample/actions)
 
 ## Built With
 
@@ -172,7 +172,7 @@ Available soon!
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/AntonioFalcao/SolrDotnetSample/tags). 
 
 ## Authors
 
