@@ -156,11 +156,15 @@ Detalhes sobre esteria (CI/CD) disponíveis em [Project GitHub Actions](https://
 
 ## Built With
 
+##### .NET Stack
 * [.NET Core](https://dotnet.microsoft.com/) - The base framework used
 * [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1) - The web framework used
 * [EF Core](https://docs.microsoft.com/en-us/ef/core/get-started/?tabs=netcore-cli) - ORM
-* [SolrNet](https://github.com/SolrNet/SolrNet/) - Apache Solr client for .NET
 * [AutoMapper](https://automapper.org/) - Library for mapping objects
+
+##### Solr Stack
+* [Solr](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiT8fiYgdDpAhVMILkGHRapBdwQFjAAegQICBAC&url=https%3A%2F%2Flucene.apache.org%2Fsolr%2F&usg=AOvVaw220ce7CtImnLrhaQpO1SO2) - Search Engine used.
+* [SolrNet](https://github.com/SolrNet/SolrNet/) - Apache Solr client for .NET
 
 ## Contributing
 
