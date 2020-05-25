@@ -4,28 +4,24 @@ using System.Net.Http;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
 using Microsoft.Extensions.Configuration;
-using SolrDotnetSample.Domain.Entities;
 using SolrDotnetSample.Repositories;
-using SolrDotnetSample.Services;
+using SolrDotnetSample.Repositories.Models;
 
 namespace SolrDotnetSample.Application.Seeders
 {
     public class SolrSeeder : ISolrSeeder
     {
         private readonly IConfiguration _configuration;
-        private readonly IMapper _mapper;
         private readonly SeedOptions _options;
+        private readonly IPostNoSqlRepository _postNoSqlRepository;
         private readonly IPostRelationalRepository _postRelationalRepository;
-        private readonly IPostService _postService;
 
-        public SolrSeeder(IPostService postService, IConfiguration configuration, IPostRelationalRepository postRelationalRepository, IMapper mapper)
+        public SolrSeeder(IConfiguration configuration, IPostRelationalRepository postRelationalRepository, IPostNoSqlRepository postNoSqlRepository)
         {
-            _postService = postService;
             _configuration = configuration;
             _postRelationalRepository = postRelationalRepository;
-            _mapper = mapper;
+            _postNoSqlRepository = postNoSqlRepository;
             _options = new SeedOptions();
         }
 
@@ -39,9 +35,19 @@ namespace SolrDotnetSample.Application.Seeders
                 {
                     case Source.New:
                     {
-                        var posts = new List<Post>();
+                        var posts = new List<PostModel>();
                         for (var i = 0; i < options.Amount; i++)
-                            posts.Add(new Post(Guid.NewGuid(), "Description", "Title", 0.0, DateTime.Now, DateTime.Now, true, true));
+                            posts.Add(new PostModel
+                            {
+                                Id = Guid.NewGuid(),
+                                Description = "Description",
+                                Title = "Title",
+                                Price = 0.0,
+                                ExpiryDate = DateTime.Now,
+                                PostDate = DateTime.Now,
+                                IsActive = true,
+                                IsSold = true
+                            });
 
                         await IndexAsync(posts, cancellationToken);
                         break;
@@ -50,7 +56,7 @@ namespace SolrDotnetSample.Application.Seeders
                     case Source.Relational:
                     {
                         var posts = await _postRelationalRepository.SelectAllAsync(model => model.Id != null, cancellationToken);
-                        await IndexAsync(_mapper.Map<IEnumerable<Post>>(posts), cancellationToken);
+                        await IndexAsync(posts, cancellationToken);
                         break;
                     }
 
@@ -65,6 +71,7 @@ namespace SolrDotnetSample.Application.Seeders
             }
 
             Console.WriteLine("DATA SEEDED WITH SUCCESS!");
+            Environment.Exit(Environment.ExitCode); 
         }
 
         private SeedOptions GetSeedOptions()
@@ -81,37 +88,25 @@ namespace SolrDotnetSample.Application.Seeders
             return _options;
         }
 
-        private async Task IndexAsync(IEnumerable<Post> posts, CancellationToken cancellationToken)
+        private async Task IndexAsync(IEnumerable<PostModel> posts, CancellationToken cancellationToken)
         {
             try
             {
-                await _postService.SaveManyAsync(posts, cancellationToken);
+                await _postNoSqlRepository.InsertManyAsync(posts, cancellationToken);
             }
             catch (HttpRequestException e)
                 when ((e.InnerException as SocketException)?.SocketErrorCode is SocketError.AddressNotAvailable)
             {
-                Console.WriteLine("Endereço do Solr informado no appsettings não pode ser encontrado.");
-                Console.WriteLine($"Endereço atual: {_configuration["Solr:BaseAddress"] + "/" + _configuration["Solr:Core"]}");
+                Console.WriteLine("SOLR ADDRESS ENTERED IN APPSETTINGS CANNOT BE FOUND.");
+                Console.WriteLine($"CURRENT ADDRESS: {_configuration["Solr:BaseAddress"] + "/" + _configuration["Solr:Core"]}");
                 await SeedAsync(cancellationToken);
             }
             catch (HttpRequestException e)
                 when ((e.InnerException as SocketException)?.SocketErrorCode is SocketError.ConnectionRefused)
             {
-                Console.WriteLine("Serviço do Solr não está disponível");
+                Console.WriteLine("SOLR SERVICE IS NOT AVAILABLE.");
                 await SeedAsync(cancellationToken);
             }
         }
-    }
-
-    internal class SeedOptions
-    {
-        public int Amount { get; set; }
-        public Source Source { get; set; }
-    }
-
-    internal enum Source
-    {
-        New = 1,
-        Relational = 2
     }
 }

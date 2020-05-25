@@ -1,7 +1,4 @@
-using System;
 using System.IO;
-using System.Reflection;
-using System.Text.RegularExpressions;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,14 +17,14 @@ namespace SolrDotnetSample.WebApi
 {
     public class Startup
     {
-        public IWebHostEnvironment Environment { get; }
-        public IConfiguration Configuration { get; }
-
         public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
             Environment = environment;
             Configuration = configuration;
         }
+
+        public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Environment { get; }
 
         public void Configure(IApplicationBuilder app, SolrDotnetSampleContext context)
         {

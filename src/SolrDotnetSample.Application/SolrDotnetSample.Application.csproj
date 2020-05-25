@@ -29,7 +29,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\SolrDotnetSample.Repositories\SolrDotnetSample.Repositories.csproj" />
-      <ProjectReference Include="..\SolrDotnetSample.Services\SolrDotnetSample.Services.csproj" />
       <ProjectReference Include="..\SolrDotnetSample.CrossCuting\SolrDotnetSample.CrossCuting.csproj" />
     </ItemGroup>
 
