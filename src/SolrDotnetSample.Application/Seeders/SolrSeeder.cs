@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using SolrDotnetSample.Repositories;
 using SolrDotnetSample.Repositories.Models;
 
@@ -16,62 +17,66 @@ namespace SolrDotnetSample.Application.Seeders
         private readonly SeedOptions _options;
         private readonly IPostNoSqlRepository _postNoSqlRepository;
         private readonly IPostRelationalRepository _postRelationalRepository;
+        private readonly ILogger<SolrSeeder> _logger;
 
-        public SolrSeeder(IConfiguration configuration, IPostRelationalRepository postRelationalRepository, IPostNoSqlRepository postNoSqlRepository)
+        public SolrSeeder(IConfiguration configuration, IPostRelationalRepository postRelationalRepository, IPostNoSqlRepository postNoSqlRepository,
+            ILogger<SolrSeeder> logger)
         {
-            _configuration = configuration;
             _postRelationalRepository = postRelationalRepository;
             _postNoSqlRepository = postNoSqlRepository;
+            _configuration = configuration;
+            _logger = logger;
             _options = new SeedOptions();
         }
 
         public async Task SeedAsync(CancellationToken cancellationToken)
         {
-            while (true)
+            var options = GetSeedOptions();
+
+            switch (_options.Source)
             {
-                var options = GetSeedOptions();
-
-                switch (_options.Source)
+                case Source.New:
                 {
-                    case Source.New:
-                    {
-                        var posts = new List<PostModel>();
-                        for (var i = 0; i < options.Amount; i++)
-                            posts.Add(new PostModel
-                            {
-                                Id = Guid.NewGuid(),
-                                Description = "Description",
-                                Title = "Title",
-                                Price = 0.0,
-                                ExpiryDate = DateTime.Now,
-                                PostDate = DateTime.Now,
-                                IsActive = true,
-                                IsSold = true
-                            });
-
-                        await IndexAsync(posts, cancellationToken);
-                        break;
-                    }
-
-                    case Source.Relational:
-                    {
-                        var posts = await _postRelationalRepository.SelectAllAsync(model => model.Id != null, cancellationToken);
-                        await IndexAsync(posts, cancellationToken);
-                        break;
-                    }
-
-                    default:
-                    {
-                        Console.WriteLine("INVALID OPTION");
-                        continue;
-                    }
+                    var posts = GeneratePostModels(options.Amount);
+                    await IndexAsync(posts, cancellationToken);
+                    break;
                 }
 
-                break;
+                case Source.Relational:
+                {
+                    var posts = await _postRelationalRepository.SelectAllAsync(model => model.Id != null, cancellationToken);
+                    await IndexAsync(posts, cancellationToken);
+                    break;
+                }
+
+                default:
+                {
+                    _logger.LogError("INVALID OPTION");
+                    await SeedAsync(cancellationToken);
+                    break;
+                }
             }
 
-            Console.WriteLine("DATA SEEDED WITH SUCCESS!");
-            Environment.Exit(Environment.ExitCode); 
+            _logger.LogInformation("DATA SEEDED WITH SUCCESS!");
+            Environment.Exit(Environment.ExitCode);
+        }
+
+        private static IEnumerable<PostModel> GeneratePostModels(int amount)
+        {
+            var posts = new List<PostModel>();
+            for (var i = 0; i < amount; i++)
+                posts.Add(new PostModel
+                {
+                    Id = Guid.NewGuid(),
+                    Description = "Description",
+                    Title = "Title",
+                    Price = 0.0,
+                    ExpiryDate = DateTime.Now,
+                    PostDate = DateTime.Now,
+                    IsActive = true,
+                    IsSold = true
+                });
+            return posts;
         }
 
         private SeedOptions GetSeedOptions()
@@ -94,17 +99,15 @@ namespace SolrDotnetSample.Application.Seeders
             {
                 await _postNoSqlRepository.InsertManyAsync(posts, cancellationToken);
             }
-            catch (HttpRequestException e)
-                when ((e.InnerException as SocketException)?.SocketErrorCode is SocketError.AddressNotAvailable)
+            catch (HttpRequestException e) when ((e.InnerException as SocketException)?.SocketErrorCode is SocketError.AddressNotAvailable)
             {
-                Console.WriteLine("SOLR ADDRESS ENTERED IN APPSETTINGS CANNOT BE FOUND.");
-                Console.WriteLine($"CURRENT ADDRESS: {_configuration["Solr:BaseAddress"] + "/" + _configuration["Solr:Core"]}");
+                _logger.LogError("SOLR ADDRESS ENTERED IN APPSETTINGS CANNOT BE FOUND.");
+                _logger.LogInformation($"CURRENT ADDRESS: {_configuration["Solr:BaseAddress"] + "/" + _configuration["Solr:Core"]}");
                 await SeedAsync(cancellationToken);
             }
-            catch (HttpRequestException e)
-                when ((e.InnerException as SocketException)?.SocketErrorCode is SocketError.ConnectionRefused)
+            catch (HttpRequestException e) when ((e.InnerException as SocketException)?.SocketErrorCode is SocketError.ConnectionRefused)
             {
-                Console.WriteLine("SOLR SERVICE IS NOT AVAILABLE.");
+                _logger.LogError("SOLR SERVICE IS NOT AVAILABLE.");
                 await SeedAsync(cancellationToken);
             }
         }
