@@ -86,10 +86,9 @@ Content-Type: application/json
       "type":"string",
       "stored":true
       },
+}
 
 ### comment for brevity
-
-}
 ```
 #### Semeando dados no Solr
 
@@ -115,7 +114,7 @@ Os testes unitários e de integração podem ser executados com o respectivo com
 dotnet test
 ```
 #### Functional tests
-Para executarmos testes de forma funcional, devemos inicialmente executar o projeto para disponibilizar o serviço Web. O 
+Para executarmos testes de forma funcional, devemos inicialmente executar o projeto para disponibilizar o serviço Web. 
 
 ```bash
 docker build -t webapi -f ./webApi.Dockerfile . && docker run -p 5000:5000 webapi 
