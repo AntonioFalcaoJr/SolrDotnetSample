@@ -9,6 +9,7 @@ ENV DOTNET_ENVIRONMENT=Development
 FROM mcr.microsoft.com/dotnet/core/sdk:$SDK_VERSION AS build
 WORKDIR /src
 
+COPY ./src/SolrDotnetSample.CrossCuting/*.csproj ./SolrDotnetSample.CrossCuting/
 COPY ./src/SolrDotnetSample.Domain/*.csproj ./SolrDotnetSample.Domain/
 COPY ./src/SolrDotnetSample.Repositories/*.csproj ./SolrDotnetSample.Repositories/
 COPY ./src/SolrDotnetSample.Services/*.csproj ./SolrDotnetSample.Services/
@@ -17,6 +18,7 @@ COPY ./src/SolrDotnetSample.Application/*.csproj ./SolrDotnetSample.Application/
 COPY ./NuGet.Config /
 RUN dotnet restore ./SolrDotnetSample.Application
 
+COPY ./src/SolrDotnetSample.CrossCuting/. ./SolrDotnetSample.CrossCuting/
 COPY ./src/SolrDotnetSample.Domain/. ./SolrDotnetSample.Domain/
 COPY ./src/SolrDotnetSample.Repositories/. ./SolrDotnetSample.Repositories/
 COPY ./src/SolrDotnetSample.Services/. ./SolrDotnetSample.Services/

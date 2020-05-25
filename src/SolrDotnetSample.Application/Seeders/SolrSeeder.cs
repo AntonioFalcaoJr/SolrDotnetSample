@@ -49,7 +49,7 @@ namespace SolrDotnetSample.Application.Seeders
 
                     case Source.Relational:
                     {
-                        var posts = _postRelationalRepository.SelectAllAsync(model => model.Id != null, cancellationToken);
+                        var posts = await _postRelationalRepository.SelectAllAsync(model => model.Id != null, cancellationToken);
                         await IndexAsync(_mapper.Map<IEnumerable<Post>>(posts), cancellationToken);
                         break;
                     }

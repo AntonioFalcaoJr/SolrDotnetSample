@@ -65,24 +65,47 @@ O índice padrão, referido como [Core](https://lucene.apache.org/solr/guide/6_6
       - my_core
 # comment for brevity
 ```
+#### Definindo Fields
+
+A definição dos [Fields](https://lucene.apache.org/solr/guide/6_6/field-type-definitions-and-properties.html#field-type-definitions-and-properties) no Solr é um passo essencial, para garantir que o dado terá a mesma representação desejada pelo modelo.
+
+Existem dois caminhos para isso, um deles é definir os detalhes dos fields no [schema.xml](https://lucene.apache.org/solr/guide/6_6/field-type-definitions-and-properties.html#FieldTypeDefinitionsandProperties-FieldTypeDefinitionsinschema.xml), a outra forma é realizando chamadas direta à API do serviço. Para segunda alternativa, existe o arquivo [solr-add-fields.http](./solr-add-fields.http) disponível no projeto:
+
+```http request
+POST http://localhost:8983/solr/my_core/schema
+Content-Type: application/json
+
+{
+   "add-field":{
+      "name":"Description",
+      "type":"string",
+      "stored":true
+      },
+   "add-field":{
+      "name":"Title",
+      "type":"string",
+      "stored":true
+      },
+
+# comment for brevity
+
+```
 #### Semeando dados no Solr
 
-Uma vez provisionado o ambiente, podemos semear dados atravez dos passos:
+Uma vez provisionado o ambiente e configurado os fields, podemos semear dados atravez dos passos:
 
-> 1.  Aplicar migrations do EF Core ao dbcontext relacional.
+ 1.  Aplicar migrations do EF Core, que já se encarregará do Seed para o DB relacional.
+ > Nesta etapa irá correr o Seed de dados para o DB relacional de forma automática. 
 ```bash
 dotnet ef database update -s ./src/SolrDotnetSample.WebApi/ -p ./src/SolrDotnetSample.Repositories/
 ```
-> 2. Executar aplicação console e selecionar opção de semeadura.
-
+ 2. Executar aplicação console e selecionar opção de semeadura para o Solr.
+> Duas opções estarão disponíveis, sendo: 
+>1. Gerar novos dados.
+>2. Migrar dados do relacional. 
 ```bash
 docker build -t seed -f ./consoleApp.Dockerfile . && docker run -it seed
 ```
-> 3. Aplicar migrations ao dbcontext relacional.
-```bash
-docker-compose -f solr-compose.yml up
-```
-
 ## Running the tests
 
 #### Automated tests
@@ -94,7 +117,7 @@ dotnet test
 Para executarmos testes de forma funcional, devemos inicialmente executar o projeto para disponibilizar o serviço Web. O 
 
 ```bash
-dotnet run -p ./src/SolrDotnetSample.WebApi/
+docker build -t webapi -f ./webApi.Dockerfile . && docker run -p 5000:5000 webapi 
 ```
 
 > O roteamento segue o padrão `http://hostname:port/api/v{version}/controller`
@@ -103,11 +126,11 @@ Para realizar chamadas, pode estar utilizando o arquivo [./basic-api-call.http](
 
 ```http request
 
-GET https://localhost:5001/api/v1/posts
+GET http://localhost:5000/api/v1/posts
 
 ###
 
-POST https://localhost:5001/api/v1/posts
+POST http://localhost:5000/api/v1/posts
 Content-Type: application/json
 
 {
