@@ -4,5 +4,5 @@ using SolrDotnetSample.Services.Abstractions.NoSql;
 
 namespace SolrDotnetSample.Services
 {
-    public interface IPostService : INoSqlService<Post, Guid> { }
+    public interface IPostNoSqlService : INoSqlService<Post, Guid> { }
 }

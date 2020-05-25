@@ -23,16 +23,14 @@ namespace SolrDotnetSample.WebApi
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-        public IWebHostEnvironment Environment { get; }
+        private IConfiguration Configuration { get; }
+        private IWebHostEnvironment Environment { get; }
 
         public void Configure(IApplicationBuilder app, SolrDotnetSampleContext context)
         {
             if (Environment.IsDevelopment()) app.UseDeveloperExceptionPage();
             app.UseApiVersioning();
-            app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseAuthorization();
             app.UseEndpoints(endpoints => endpoints.MapControllers());
             context.Database.Migrate();
         }
@@ -41,6 +39,7 @@ namespace SolrDotnetSample.WebApi
         {
             services.AddControllers();
             services.AddApiVersioning();
+            services.AddLogging();
             services.AddRepositories();
             services.AddServices();
             services.AddAutoMapper(typeof(DtoToDomainProfile), typeof(ModelToDomainProfile), typeof(DomainToModelProfile));

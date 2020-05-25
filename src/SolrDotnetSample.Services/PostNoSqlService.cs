@@ -7,9 +7,9 @@ using SolrDotnetSample.Services.Abstractions;
 
 namespace SolrDotnetSample.Services
 {
-    public class PostService : Service<Post, PostModel, Guid>, IPostService
+    public class PostNoSqlService : Service<Post, PostModel, Guid>, IPostNoSqlService
     {
-        public PostService(IPostNoSqlRepository noSqlRepository, IMapper mapper)
-            : base(noSqlRepository, mapper) { }
+        public PostNoSqlService(IPostNoSqlRepository repository, IMapper mapper)
+            : base(repository, mapper) { }
     }
 }

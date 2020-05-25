@@ -1,3 +1,10 @@
+### V1 - Relational DB
+GET http://localhost:5000/api/v1/posts
+
+### V2 - NoSql DB
+GET http://localhost:5000/api/v2/posts
+
+### V1 - Relational DB
 POST http://localhost:5000/api/v1/posts
 Content-Type: application/json
 
@@ -11,6 +18,46 @@ Content-Type: application/json
   "Title": "Title"
 }
 
+### V2 - NoSql DB
+POST http://localhost:5000/api/v2/posts
+Content-Type: application/json
 
-###
-GET http://localhost:5000/api/v1/posts
+{
+  "Description": "Description",
+  "ExpiryDate": "2020-01-01",
+  "IsActive": true,
+  "IsSold": true,
+  "PostDate": "2020-01-01",
+  "Price": 0,
+  "Title": "Title"
+}
+
+### V1 - Relational DB
+PUT http://localhost:5000/api/v1/posts/f694491b-bc98-45bc-af97-67f7ac460908
+Content-Type: application/json
+
+{
+  "Id":"f694491b-bc98-45bc-af97-67f7ac460908",
+  "Description": "Description",
+  "ExpiryDate": "2020-01-01",
+  "IsActive": true,
+  "IsSold": true,
+  "PostDate": "2020-01-01",
+  "Price": 0,
+  "Title": "Title"
+}
+
+### V2 - NoSql DB
+PUT http://localhost:5000/api/v2/posts/f694491b-bc98-45bc-af97-67f7ac460908
+Content-Type: application/json
+
+{
+  "Id":"f694491b-bc98-45bc-af97-67f7ac460908",
+  "Description": "Description",
+  "ExpiryDate": "2020-01-01",
+  "IsActive": true,
+  "IsSold": true,
+  "PostDate": "2020-01-01",
+  "Price": 0,
+  "Title": "Title"
+}

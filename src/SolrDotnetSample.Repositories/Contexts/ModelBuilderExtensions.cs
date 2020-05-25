@@ -7,10 +7,13 @@ namespace SolrDotnetSample.Repositories.Contexts
 {
     public static class ModelBuilderExtensions
     {
-        public static void Seed(this ModelBuilder modelBuilder)
+        public static void Seed(this ModelBuilder modelBuilder) => modelBuilder
+           .Entity<PostModel>()
+           .HasData(GeneratePosts());
+
+        private static IEnumerable<PostModel> GeneratePosts()
         {
             var posts = new List<PostModel>();
-
             for (var i = 0; i < 500; i++)
                 posts.Add(new PostModel
                 {
@@ -22,10 +25,7 @@ namespace SolrDotnetSample.Repositories.Contexts
                     PostDate = DateTime.Now,
                     Price = 0, Title = "Title"
                 });
-
-            modelBuilder
-               .Entity<PostModel>()
-               .HasData(posts);
+            return posts;
         }
     }
 }

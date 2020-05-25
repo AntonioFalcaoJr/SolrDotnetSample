@@ -87,7 +87,7 @@ Content-Type: application/json
       "stored":true
       },
 
-# comment for brevity
+### comment for brevity
 
 }
 ```
@@ -125,12 +125,17 @@ docker build -t webapi -f ./webApi.Dockerfile . && docker run -p 5000:5000 webap
 
 Para realizar chamadas, pode estar utilizando o arquivo [./basic-api-call.http](./basic-api-call.http) atravez da extenção [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), por exemplo:.
 
-```http request
+> `/api/v1/...` utiliza o banco de dados relacional.     
+> `/api/v2/...` utiliza o Solr
 
+```http request
+### V1 - Relational DB
 GET http://localhost:5000/api/v1/posts
 
-###
+### V2 - NoSql DB
+GET http://localhost:5000/api/v2/posts
 
+### V1 - Relational DB
 POST http://localhost:5000/api/v1/posts
 Content-Type: application/json
 
@@ -143,6 +148,8 @@ Content-Type: application/json
   "Price": 0,
   "Title": "Title"
 }
+
+### comment for brevity
 ```
 ## Deployment
 

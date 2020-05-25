@@ -14,10 +14,10 @@ namespace SolrDotnetSample.Application.Seeders
     public class SolrSeeder : ISolrSeeder
     {
         private readonly IConfiguration _configuration;
+        private readonly ILogger<SolrSeeder> _logger;
         private readonly SeedOptions _options;
         private readonly IPostNoSqlRepository _postNoSqlRepository;
         private readonly IPostRelationalRepository _postRelationalRepository;
-        private readonly ILogger<SolrSeeder> _logger;
 
         public SolrSeeder(IConfiguration configuration, IPostRelationalRepository postRelationalRepository, IPostNoSqlRepository postNoSqlRepository,
             ILogger<SolrSeeder> logger)
