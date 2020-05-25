@@ -1,3 +1,7 @@
+using System;
+using System.IO;
+using System.Reflection;
+using System.Text.RegularExpressions;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -5,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SolrDotnetSample.CrossCuting;
 using SolrDotnetSample.Repositories.Contexts;
 using SolrDotnetSample.Repositories.IoC;
 using SolrDotnetSample.Repositories.Mappers;
@@ -15,16 +20,18 @@ namespace SolrDotnetSample.WebApi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public IWebHostEnvironment Environment { get; }
+        public IConfiguration Configuration { get; }
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
+            Environment = environment;
             Configuration = configuration;
         }
 
-        private IConfiguration Configuration { get; }
-
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, SolrDotnetSampleContext context)
+        public void Configure(IApplicationBuilder app, SolrDotnetSampleContext context)
         {
-            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
+            if (Environment.IsDevelopment()) app.UseDeveloperExceptionPage();
             app.UseApiVersioning();
             app.UseHttpsRedirection();
             app.UseRouting();
@@ -48,7 +55,8 @@ namespace SolrDotnetSample.WebApi
 
             services.AddDbContext(options =>
             {
-                options.ConnectionString = Configuration.GetConnectionString("DefaultConnection");
+                options.ConnectionString = @$"Data Source={Path.Combine(ProjectProvider.TryGetSolutionDirectoryInfo().FullName,
+                    Configuration.GetConnectionString("DefaultConnection"))}";
             });
 
             services.AddSolr(options =>

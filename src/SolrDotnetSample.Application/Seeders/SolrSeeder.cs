@@ -56,23 +56,25 @@ namespace SolrDotnetSample.Application.Seeders
 
                     default:
                     {
-                        Console.WriteLine("Opção não disponível");
+                        Console.WriteLine("INVALID OPTION");
                         continue;
                     }
                 }
 
                 break;
             }
+
+            Console.WriteLine("DATA SEEDED WITH SUCCESS!");
         }
 
         private SeedOptions GetSeedOptions()
         {
-            Console.WriteLine("Define amount data for generate:");
+            Console.WriteLine("DEFINE AMOUNT DATA FOR SEEDING:");
             var input = Console.ReadLine();
             _options.Amount = int.TryParse(input, out var amount) ? amount : default;
 
-            Console.WriteLine("Define source data:");
-            Console.WriteLine("Use [1] for New data generation or [2] for seeding from relational database:");
+            Console.WriteLine("DEFINE SOURCE DATA:");
+            Console.WriteLine("USE [1] FOR NEW DATA GENERETION OR [2] FOR SEEDING FROM RELATIONAL DATABASE:");
             input = Console.ReadLine();
             _options.Source = Enum.TryParse<Source>(input, out var source) ? source : default;
 

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.Extensions.Configuration;
@@ -9,6 +10,7 @@ using SolrDotnetSample.Application.Seeders;
 using SolrDotnetSample.Repositories.IoC;
 using SolrDotnetSample.Repositories.Mappers;
 using SolrDotnetSample.Services.IoC;
+using SolrDotnetSample.CrossCuting;
 
 namespace SolrDotnetSample.Application
 {
@@ -46,7 +48,9 @@ namespace SolrDotnetSample.Application
                        .AddAutoMapper(typeof(ModelToDomainProfile), typeof(DomainToModelProfile))
                        .AddDbContext(options =>
                         {
-                            options.ConnectionString = hostContext.Configuration.GetConnectionString("DefaultConnection");
+                            options.ConnectionString = @$"Data Source={Path.Combine(ProjectProvider.TryGetSolutionDirectoryInfo().FullName, 
+                                    hostContext.Configuration.GetConnectionString("DefaultConnection"))}";
+                            
                         })
                        .AddSolr(options =>
                         {

@@ -6,6 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\SolrDotnetSample.CrossCuting\SolrDotnetSample.CrossCuting.csproj" />
       <ProjectReference Include="..\SolrDotnetSample.Repositories\SolrDotnetSample.Repositories.csproj" />
       <ProjectReference Include="..\SolrDotnetSample.Services\SolrDotnetSample.Services.csproj" />
     </ItemGroup>
