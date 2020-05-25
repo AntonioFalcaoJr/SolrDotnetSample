@@ -89,13 +89,14 @@ Content-Type: application/json
 
 # comment for brevity
 
+}
 ```
 #### Semeando dados no Solr
 
 Uma vez provisionado o ambiente e configurado os fields, podemos semear dados atravez dos passos:
 
  1.  Aplicar migrations do EF Core, que já se encarregará do Seed para o DB relacional.
- > Nesta etapa irá correr o Seed de dados para o DB relacional de forma automática. 
+ > Nesta etapa irá ocorrer a semeadura de dados para o DB relacional. 
 ```bash
 dotnet ef database update -s ./src/SolrDotnetSample.WebApi/ -p ./src/SolrDotnetSample.Repositories/
 ```
