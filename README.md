@@ -156,7 +156,7 @@ Detalhes sobre esteira (CI/CD) disponíveis em [Project GitHub Actions](https://
 
 ## Built With
 
-##### .NET Stack
+##### Microsoft Stack
 * [.NET Core](https://dotnet.microsoft.com/) - The base framework used
 * [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1) - The web framework used
 * [EF Core](https://docs.microsoft.com/en-us/ef/core/get-started/?tabs=netcore-cli) - ORM
