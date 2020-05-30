@@ -1,5 +1,5 @@
 # Sample with .NET Core and SolrNet
-
+[![CodeFactor](https://www.codefactor.io/repository/github/antoniofalcao/solrdotnetsample/badge)](https://www.codefactor.io/repository/github/antoniofalcao/solrdotnetsample)
 ![.NET Core](https://github.com/AntonioFalcao/SolrDotnetSample/workflows/.NET%20Core/badge.svg?branch=master)
 ![Console App - Docker Image CI](https://github.com/AntonioFalcao/SolrDotnetSample/workflows/Console%20App%20-%20Docker%20Image%20CI/badge.svg?branch=master)
 ![WebApi - Docker Image CI](https://github.com/AntonioFalcao/SolrDotnetSample/workflows/WebApi%20-%20Docker%20Image%20CI/badge.svg?branch=master)
