@@ -51,8 +51,7 @@ namespace SolrDotnetSample.WebApi
 
             services.AddDbContext(options =>
             {
-                options.ConnectionString = @$"Data Source={Path.Combine(ProjectProvider.TryGetSolutionDirectoryInfo().FullName,
-                    Configuration.GetConnectionString("DefaultConnection"))}";
+                options.ConnectionString = Configuration.GetConnectionString("DefaultConnection");
             });
 
             services.AddSolr(options =>

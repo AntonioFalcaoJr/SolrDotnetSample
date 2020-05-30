@@ -1,0 +1,57 @@
+version: '3.7'
+
+services:
+
+  solr:
+    container_name: solr
+    image: solr
+    ports:
+      - 8983:8983
+    entrypoint:
+      - solr-precreate
+      - solrdotnetsample
+    volumes:
+      - solrdata:/opt/solr/server/solr/posts
+    networks:
+      - solrdotnetsample
+
+  mssql:
+    container_name: mssql
+    image: mcr.microsoft.com/mssql/server
+    ports:
+      - 1433:1433
+    environment:
+      SA_PASSWORD: "!SolrDotnetSample"
+      ACCEPT_EULA: "Y"
+    networks:
+      - solrdotnetsample
+
+  webapi:
+    container_name: webapi
+    build:
+      context: .
+      dockerfile: ./src/SolrDotnetSample.WebApi/Dockerfile
+    ports:
+      - 5000:5000
+    depends_on:
+      - mssql
+    networks:
+      - solrdotnetsample
+
+  consoleapp:
+    container_name: consoleapp
+    build:
+      context: .
+      dockerfile: ./src/SolrDotnetSample.Application/Dockerfile
+    depends_on:
+      - mssql
+    networks:
+      - solrdotnetsample
+
+volumes:
+  solrdata:
+    driver: local
+
+networks:
+  solrdotnetsample:
+    driver: bridge

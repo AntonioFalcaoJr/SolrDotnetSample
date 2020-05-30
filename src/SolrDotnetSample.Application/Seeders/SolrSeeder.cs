@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using SolrDotnetSample.Application.Seeders.Options;
 using SolrDotnetSample.Repositories;
 using SolrDotnetSample.Repositories.Models;
 

@@ -1,4 +1,4 @@
-namespace SolrDotnetSample.Application.Seeders
+namespace SolrDotnetSample.Application.Seeders.Options
 {
     internal class SeedOptions
     {

@@ -24,8 +24,8 @@ namespace SolrDotnetSample.Repositories.IoC
 
             return services.AddDbContext<SolrDotnetSampleContext>(dbContextOptions
                 => dbContextOptions.UseLazyLoadingProxies()
-                   .UseSqlite(RepositoryOptions.ConnectionString, sqliteOptions
-                        => sqliteOptions.MigrationsAssembly(typeof(SolrDotnetSampleContext).Assembly.GetName().Name)));
+                   .UseSqlServer(RepositoryOptions.ConnectionString, optionsBuilder
+                        => optionsBuilder.MigrationsAssembly(typeof(SolrDotnetSampleContext).Assembly.GetName().Name)));
         }
 
         public static IServiceCollection AddRepositories(this IServiceCollection services)
