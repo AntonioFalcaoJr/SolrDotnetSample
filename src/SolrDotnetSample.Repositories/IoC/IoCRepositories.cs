@@ -1,6 +1,7 @@
 using System;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using SolrDotnetSample.Repositories.Contexts;
 using SolrDotnetSample.Repositories.IoC.Options;
@@ -22,9 +23,15 @@ namespace SolrDotnetSample.Repositories.IoC
             options.Invoke(RepositoryOptions);
 
             return services.AddDbContext<SolrDotnetSampleContext>(dbContextOptions
-                => dbContextOptions.UseLazyLoadingProxies()
-                   .UseSqlServer(RepositoryOptions.ConnectionString, optionsBuilder
-                        => optionsBuilder.MigrationsAssembly(typeof(SolrDotnetSampleContext).Assembly.GetName().Name)));
+                => dbContextOptions
+                   .UseSqlServer(RepositoryOptions.ConnectionString, SqlServerOptionsAction)
+                   .UseLazyLoadingProxies());
+        }
+
+        private static void SqlServerOptionsAction(SqlServerDbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(5), null);
+            optionsBuilder.MigrationsAssembly(typeof(SolrDotnetSampleContext).Assembly.GetName().Name);
         }
 
         public static IServiceCollection AddRepositories(this IServiceCollection services)
@@ -34,7 +41,7 @@ namespace SolrDotnetSample.Repositories.IoC
         public static IServiceCollection AddSolr(this IServiceCollection services, Action<SolrOptions> options)
         {
             options.Invoke(SolrOptions);
-            return services.AddSolrNet("http://solr/solr/");
+            return services.AddSolrNet(SolrOptions.Url);
         }
     }
 }

@@ -1,11 +1,11 @@
 ARG RUNTIME_VERSION="3.1.4-alpine3.11"
 ARG SDK_VERSION="3.1.300-alpine3.11"
-ARG ENVIRONMENT="Staging"
 
 FROM mcr.microsoft.com/dotnet/core/runtime:$RUNTIME_VERSION AS base
 WORKDIR /app
 
-ENV DOTNET_ENVIRONMENT=$ENVIRONMENT
+RUN apk add --no-cache icu-libs
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
 
 FROM mcr.microsoft.com/dotnet/core/sdk:$SDK_VERSION AS build
 WORKDIR /src

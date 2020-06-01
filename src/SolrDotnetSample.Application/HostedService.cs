@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
@@ -17,7 +18,7 @@ namespace SolrDotnetSample.Application
         public async Task StartAsync(CancellationToken cancellationToken)
             => await _seeder.SeedAsync(cancellationToken);
 
-        public Task StopAsync(CancellationToken cancellationToken)
-            => Task.FromResult(cancellationToken);
+        public async Task StopAsync(CancellationToken cancellationToken)
+            => await Task.FromResult<>(Environment.Exit(Environment.ExitCode));
     }
 }

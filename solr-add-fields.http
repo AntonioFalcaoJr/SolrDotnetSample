@@ -1,4 +1,4 @@
-POST http://localhost:8983/solr/my_core/schema
+POST http://localhost:8983/solr/solrdotnetsample/schema
 Content-Type: application/json
 
 {
