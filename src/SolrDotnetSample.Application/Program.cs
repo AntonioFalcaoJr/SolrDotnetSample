@@ -1,11 +1,11 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SolrDotnetSample.Application.Seeders;
-using SolrDotnetSample.CrossCuting;
 using SolrDotnetSample.Repositories.IoC;
 
 namespace SolrDotnetSample.Application
@@ -40,11 +40,7 @@ namespace SolrDotnetSample.Application
                     services
                        .AddLogging()
                        .AddRepositories()
-                       .AddDbContext(options =>
-                        {
-                            options.ConnectionString = @$"Data Source={Path.Combine(ProjectProvider.TryGetSolutionDirectoryInfo().FullName,
-                                hostContext.Configuration.GetConnectionString("DefaultConnection"))}";
-                        })
+                       .AddDbContext(options => options.ConnectionString = hostContext.Configuration.GetConnectionString("DefaultConnection"))
                        .AddSolr(options =>
                         {
                             options.BaseAddress = hostContext.Configuration["Solr:BaseAddress"];

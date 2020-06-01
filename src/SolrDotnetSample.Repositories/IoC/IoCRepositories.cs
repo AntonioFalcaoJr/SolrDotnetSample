@@ -15,8 +15,7 @@ namespace SolrDotnetSample.Repositories.IoC
         private static readonly RepositoryOptions RepositoryOptions = new RepositoryOptions();
 
         public static IServiceCollection AddAutoMapper(this IServiceCollection services)
-            => services
-               .AddAutoMapper(typeof(ModelToDomainProfile), typeof(DomainToModelProfile));
+            => services.AddAutoMapper(typeof(ModelToDomainProfile), typeof(DomainToModelProfile));
 
         public static IServiceCollection AddDbContext(this IServiceCollection services, Action<RepositoryOptions> options)
         {
@@ -29,14 +28,13 @@ namespace SolrDotnetSample.Repositories.IoC
         }
 
         public static IServiceCollection AddRepositories(this IServiceCollection services)
-            => services
-               .AddScoped<IPostNoSqlRepository, PostNoSqlRepository>()
+            => services.AddScoped<IPostNoSqlRepository, PostNoSqlRepository>()
                .AddScoped<IPostRelationalRepository, PostRelationRepository>();
 
         public static IServiceCollection AddSolr(this IServiceCollection services, Action<SolrOptions> options)
         {
             options.Invoke(SolrOptions);
-            return services.AddSolrNet(SolrOptions.Url);
+            return services.AddSolrNet("http://solr/solr/");
         }
     }
 }

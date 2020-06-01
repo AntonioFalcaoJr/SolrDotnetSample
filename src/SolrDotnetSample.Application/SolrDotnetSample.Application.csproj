@@ -7,29 +7,31 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
-      <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-      <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.4" />
-      <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="3.1.4" />
-      <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.4" />
-      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.4" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.4" />
-      <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.4" />
-      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.4" />
-      <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.4" />
-      <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="3.1.4" />
-      <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.4" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="3.1.4" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.4" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.4" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.4" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.4" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.4" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.4" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="3.1.4" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.4" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="appsettings.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <ProjectReference Include="..\SolrDotnetSample.Repositories\SolrDotnetSample.Repositories.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="appsettings.Development.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\SolrDotnetSample.Repositories\SolrDotnetSample.Repositories.csproj" />
-      <ProjectReference Include="..\SolrDotnetSample.CrossCuting\SolrDotnetSample.CrossCuting.csproj" />
+      <None Update="appsettings.Staging.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

@@ -6,7 +6,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SolrDotnetSample.CrossCuting\SolrDotnetSample.CrossCuting.csproj" />
       <ProjectReference Include="..\SolrDotnetSample.Repositories\SolrDotnetSample.Repositories.csproj" />
       <ProjectReference Include="..\SolrDotnetSample.Services\SolrDotnetSample.Services.csproj" />
     </ItemGroup>
@@ -15,4 +14,17 @@
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.1.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Update="appsettings.Staging.json">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="appsettings.Development.json">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+    
 </Project>

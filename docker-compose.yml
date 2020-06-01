@@ -35,6 +35,10 @@ services:
       - 5000:5000
     depends_on:
       - mssql
+      - solr
+    links:
+      - mssql
+      - solr
     networks:
       - solrdotnetsample
 
@@ -43,8 +47,15 @@ services:
     build:
       context: .
       dockerfile: ./src/SolrDotnetSample.Application/Dockerfile
+    stdin_open: true
+    tty: true
     depends_on:
       - mssql
+      - solr
+      - webapi
+    links:
+      - mssql
+      - solr
     networks:
       - solrdotnetsample
 

@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SolrDotnetSample.CrossCuting;
 using SolrDotnetSample.Repositories.Contexts;
 using SolrDotnetSample.Repositories.IoC;
 using SolrDotnetSample.Repositories.Mappers;
@@ -43,17 +42,8 @@ namespace SolrDotnetSample.WebApi
             services.AddRepositories();
             services.AddServices();
             services.AddAutoMapper(typeof(DtoToDomainProfile), typeof(ModelToDomainProfile), typeof(DomainToModelProfile));
-
-            services.AddMvcCore(options =>
-            {
-                options.SuppressAsyncSuffixInActionNames = false;
-            });
-
-            services.AddDbContext(options =>
-            {
-                options.ConnectionString = Configuration.GetConnectionString("DefaultConnection");
-            });
-
+            services.AddMvcCore(options => options.SuppressAsyncSuffixInActionNames = false);
+            services.AddDbContext(options => options.ConnectionString = Configuration.GetConnectionString("DefaultConnection"));
             services.AddSolr(options =>
             {
                 options.BaseAddress = Configuration["Solr:BaseAddress"];
