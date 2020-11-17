@@ -1,4 +1,4 @@
-name: Console App - Docker Image CI
+name: WebApi - Docker Image CI
 
 on:
   push:
@@ -7,12 +7,9 @@ on:
     branches: [ master ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file ./consoleApp.Dockerfile --tag consoleapp:$(date +%s)
+      run: docker build . --file ./src/SolrDotnetSample.WebApi/Dockerfile --tag webapi:$(date +%s)
