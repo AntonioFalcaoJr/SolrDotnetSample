@@ -1,13 +1,14 @@
-ARG RUNTIME_VERSION="3.1.4-alpine3.11"
-ARG SDK_VERSION="3.1.300-alpine3.11"
+ARG ASPNET_VERSION="5.0.0-rc.1-alpine3.12"
+ARG SDK_VERSION="5.0.100-rc.1-alpine3.12"
+ARG BASE_ADRESS="mcr.microsoft.com/dotnet"
 
-FROM mcr.microsoft.com/dotnet/core/runtime:$RUNTIME_VERSION AS base
+FROM $BASE_ADRESS/aspnet:$ASPNET_VERSION AS base
 WORKDIR /app
 
 RUN apk add --no-cache icu-libs
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
 
-FROM mcr.microsoft.com/dotnet/core/sdk:$SDK_VERSION AS build
+FROM $BASE_ADRESS/sdk:$SDK_VERSION AS build
 WORKDIR /src
 
 COPY ./src/SolrDotnetSample.Domain/*.csproj ./SolrDotnetSample.Domain/
