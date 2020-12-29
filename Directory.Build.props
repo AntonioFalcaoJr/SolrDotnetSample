@@ -1,0 +1,24 @@
+﻿<Project>
+    <PropertyGroup Label="Common properties">
+        <TargetFramework>net5.0</TargetFramework>
+        <LangVersion>9</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Label="Packages dependency versions">
+
+        <!--Microsoft-->
+        <Microsoft_DependencyInjection_Version>5.0.0</Microsoft_DependencyInjection_Version>
+
+        <!--EF Core-->
+        <Microsoft_EntityFrameworkCore_Version>5.0.0</Microsoft_EntityFrameworkCore_Version>
+
+        <!--AutoMapper-->
+        <AutoMapper_DependencyInjection_Version>8.1.0</AutoMapper_DependencyInjection_Version>
+        <AutoMapper_Version>10.1.1</AutoMapper_Version>
+
+        <!--Other-->
+        <FluentValidation_Version>9.3.0</FluentValidation_Version>
+        <Scrutor_Version>3.3.0</Scrutor_Version>
+        
+    </PropertyGroup>
+</Project>
